@@ -1,0 +1,70 @@
+:root {
+    --main-color: #F1525A;
+}
+
+.background-image {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    background-image: url('https://cdn.pixabay.com/photo/2014/12/30/13/44/programming-583923_960_720.jpg');
+}
+
+.background-image img {
+    border-radius: 40%;
+    height: 200px;
+    width: 200px;
+}
+
+.background-image .profile-title {
+    margin-top: 20px;
+}
+
+
+@media only screen and (max-width: 776px){
+    .background-image .profile-title h2,
+    .background-image .profile-title h4 {
+        text-align:  center;
+    }
+
+    .background-image .profile-title h2,
+    .background-image .profile-title h4 {
+        font-size: 17px;
+    }
+
+    .background-image .profile-title {
+        margin-top: 40px;
+    }
+}
+
+.portfolio {
+    height: auto;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.portfolio .section .section-content,
+.portfolio .side-section .side-section-content {
+    background-color: #fff;
+    box-shadow: 14px 10px 40px #999;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.portfolio .section .section-content h2,
+.portfolio .side-section .side-section-content h2 {
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.portfolio .side-section .side-section-content ul li a {
+    color: var(--main-color);
+}
+
+.portfolio .side-section .side-section-content ul li a:hover {
+    opacity: 0.5;
+}
+
+.portfolio .side-section .skills > * {
+    margin-bottom: 30px;
+}
