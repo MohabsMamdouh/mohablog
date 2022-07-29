@@ -159,10 +159,10 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `name`, `url`, `caption`, `techmologyStack`, `endDate`, `created_at`, `updated_at`) VALUES
-(1, 'Al-Handasya', 'www.Al-Handasya.com', 'created to make the admin able to manage client\'s requests and manage employes.', 'Laravel, Bootstrap, HTML, CSS', '2022-07-20', '2022-07-26 11:20:41', '2022-07-26 11:20:41'),
+(1, 'Al-Handasya', 'https://github.com/MohabsMamdouh/Al-Handasya', 'created to make the admin able to manage client\'s requests and manage employes.', 'Laravel, Bootstrap, HTML, CSS', '2022-07-20', '2022-07-26 11:20:41', '2022-07-26 11:20:41'),
 (2, 'Amireta', 'https://amireta.com/', 'It is a blog about women and it has it\'s Mobile application', 'Wordpress, PHP, Bootstrap, HTML, CSS', '2021-08-31', '2022-07-26 11:21:55', '2022-07-26 11:21:55'),
-(3, 'Pharmacy', 'www.Pharmacy.com', 'Created to make the admin able to manage Orders from the patient and keep tracking his medicines.', 'PHP, Bootstrap, HTML, CSS, Jquery, AJAX', '2021-06-24', '2022-07-26 11:22:32', '2022-07-26 11:22:32'),
-(4, 'Gym', 'www.Gym.com', 'It is a blog about gym, the admin could post offers and manage coashes.', 'PHP, Bootstrap, HTML, CSS, Jquery, AJAX', '2021-03-15', '2022-07-26 11:23:10', '2022-07-26 11:23:10');
+(3, 'Pharmacy', 'https://github.com/MohabsMamdouh/My_Pharamacy', 'Created to make the admin able to manage Orders from the patient and keep tracking his medicines.', 'PHP, Bootstrap, HTML, CSS, Jquery, AJAX', '2021-06-24', '2022-07-26 11:22:32', '2022-07-26 11:22:32'),
+(4, 'Gym', 'https://github.com/MohabsMamdouh/GYM', 'It is a blog about gym, the admin could post offers and manage coashes.', 'PHP, Bootstrap, HTML, CSS, Jquery, AJAX', '2021-03-15', '2022-07-26 11:23:10', '2022-07-26 11:23:10');
 
 -- --------------------------------------------------------
 
