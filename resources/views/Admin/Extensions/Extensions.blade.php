@@ -182,7 +182,7 @@
                 <h5 class="card-title">{{ __('Delete the Extension "') . $editors[$i]->name . '"?' }}</h5>
                 <p class="card-text">
                     <a href="{{ route('deleteExtensions', ['id' => $editors[$i]->id]) }}" class="card-link">{{ __('Delete') }}</a>
-                    <a href="#" class="card-link cancel" onclick="closeForm{{ $i }}()">{{ __('Cancel') }}</a>
+                    <a href="#" class="card-link cancel" onclick="closeDeleteEDitor{{ $i }}()">{{ __('Cancel') }}</a>
                 </p>
             </div>
         </div>
@@ -202,7 +202,7 @@
 
         }
 
-        function closeForm{{ $i }}() {
+        function closeDeleteEDitor{{ $i }}() {
             $('#editor_' + {{ $i }}).css('display', 'none');
             $('.overlay').css('display', 'none');
         }
@@ -218,7 +218,7 @@
                 <h5 class="card-title">{{ __('Delete the Extension "') . $operatings[$i]->name . '"?' }}</h5>
                 <p class="card-text">
                     <a href="{{ route('deleteExtensions', ['id' => $operatings[$i]->id]) }}" class="card-link">{{ __('Delete') }}</a>
-                    <a href="#" class="card-link cancel" onclick="closeForm{{ $i }}()">{{ __('Cancel') }}</a>
+                    <a href="#" class="card-link cancel" onclick="closeDeleteOperating{{ $i }}()">{{ __('Cancel') }}</a>
                 </p>
             </div>
         </div>
@@ -238,7 +238,7 @@
 
         }
 
-        function closeForm{{ $i }}() {
+        function closeDeleteOperating{{ $i }}() {
             $('#operating_' + {{ $i }}).css('display', 'none');
             $('.overlay').css('display', 'none');
         }

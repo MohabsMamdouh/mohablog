@@ -31,7 +31,7 @@
 </head>
 <body>
 
-    <section class="content">
+    <section class="content" style="min-height: 470px;">
         @yield('content')
     </section>
 

@@ -65,13 +65,13 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col-xl-6">
                                     <div class="input-group">
                                         <input type="date" name="startDate" id="startDate" class="form-control" value="{{ $work->startDate }}" placeholder="Start Date" required>
                                         <label for="startDate">{{ __('Start Date') }}</label>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-xl-6">
                                     <div class="input-group">
                                         <small>
                                             <input type="checkbox" onchange="Disable()" style="width: 10%;" value="present" name="Present" id="present"
