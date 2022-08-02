@@ -164,7 +164,7 @@
                             <ul class="list-unstyled text-capitalize m-auto">
                                 <li><a href="#">{{ $user->address }}</a></li>
                                 <li class="text-lowercase"><a href="#">{{ $user->email }}</a></li>
-                                <li><a href="#">{{ __('Download CV') }}</a></li>
+                                <li><a href="{{ route('downloadPDF') }}">{{ __('Download CV') }}</a></li>
                                 <li><a href="#">{{ __('Contact me') }}</a></li>
                             </ul>
                         </div>
