@@ -60,6 +60,10 @@ class UserHomeController extends BaseController
         $works = WorkExp::all();
 
         $pdf = Pdf::loadView('pdf', compact('projects', 'skills', 'sLanguages', 'user', 'works'));
-        return $pdf->download(strtok($user->fullName, " ")  . '-C.V.pdf');
+
+        $strArray = explode(' ',$user->fullName);
+        $firstName = $strArray[0];
+        $lastName = $strArray[1];
+        return $pdf->download($firstName . '-' . $lastName  . '-C.V.pdf');
     }
 }
