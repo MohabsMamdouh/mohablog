@@ -92,7 +92,7 @@ Route::controller(App\Http\Controllers\workcontroller::class)->group(function ()
 });
 
 
-Route::controller(App\Http\Controllers\Languagecontroller::class)->group(function ()
+Route::controller(App\Http\Controllers\LanguageController::class)->group(function ()
 {
     // Show Speaking Language
     Route::get('/speaking-language/show', 'index')->name('showLangs');
