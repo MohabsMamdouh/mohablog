@@ -29,7 +29,11 @@ class User extends Seeder
                 'expYear' => '4',
                 'currentPosition' => "Backend Developer PHP/Laravel",
                 'profile' => 'Mohab is a backend developer PHP/Laravel, He has 1 year of experience in backend development websites, Develop functions with a good knowledge of Web Applications Development.',
-                'phone' => '01156047032'
+                'phone' => '01156047032',
+                'github' => 'https://github.com/MohabsMamdouh',
+                'linked_in' => 'https://linkedin.com/in/mohab-mamdouh-9307a57b/',
+                'my_site' => 'https://mohablog.herokuapp.com/'
+
             )
         );
     }
