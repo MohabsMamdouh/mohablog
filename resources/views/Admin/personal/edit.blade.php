@@ -118,6 +118,30 @@
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="input-group">
+                                            <input type="text" name="my_site" id="mySite" class="form-control" value="{{ $user->my_site }}">
+                                            <label for="mySite">{{ __('mySite') }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="input-group">
+                                            <input type="text" name="github" id="github" class="form-control" value="{{ $user->github }}">
+                                            <label for="github">{{ __('Github') }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="input-group">
+                                            <input type="text" name="linked_in" id="linked_in" class="form-control" value="{{ $user->linked_in }}">
+                                            <label for="linked_in">{{ __('Linked In') }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="input-group">
                                             <textarea name="profile" class="form-control" id="profile" cols="10" rows="2">
                                                 {{ $user->profile }}
                                             </textarea>

@@ -44,7 +44,7 @@
         }
 
         .header {
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         .full-name {
@@ -88,10 +88,11 @@
 
 
         .details {
-            line-height: 20px;
+            line-height: 15px;
         }
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 15px;
+            margin-top: 50px;
         }
 
         .section:last-of-type {
@@ -107,7 +108,7 @@
         }
 
         .section__list-item {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .section__list-item:last-of-type {
@@ -191,7 +192,17 @@
                     <span class="phone">Phone: </span>
                     <span class="phone-val">{{ $user->phone }}</span>
                 </div>
-
+                <div class="contact-info">
+                    <span class="email">Linked In: </span>
+                    <span class="email-val"><a href="{{ $user->linked_in }}">{{ $user->linked_in }}</a></span>
+                </div>
+                <div class="contact-info">
+                    <span class="phone">Github: </span>
+                    <span class="phone-val"><a href="{{ $user->github }}">{{ $user->github }}</a></span>
+                    <span class="separator"></span>
+                    <span class="phone">Website: </span>
+                    <span class="phone-val"><a href="{{ $user->my_site }}">{{ $user->my_site }}</a></span>
+                </div>
                 <div class="about">
                     <span class="position">{{ $user->title }}</span>
                     <span class="desc">
@@ -246,7 +257,7 @@
                 </div> --}}
                 <div class="section unbreakable">
                     <div class="section__title">{{ __('Projects') }}</div>
-                    <div class="section__list unbreakable">
+                    <div class="section__list">
                         @foreach ($projects as $p)
                             <div class="section__list-item">
                                 <div class="name"><a href="{{ $p->url }}">{{ $p->name }} </a></div>

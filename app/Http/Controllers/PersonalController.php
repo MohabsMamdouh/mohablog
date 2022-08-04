@@ -79,6 +79,9 @@ class PersonalController extends Controller
             'Phone' => 'required',
             'ExpYear' => 'required',
             'profile' => 'required',
+            'linked_in' => 'required',
+            'github' => 'required',
+            'my_site' => 'required',
         ]);
 
         $user = User::where('id', $request['id'])->first();
@@ -90,6 +93,9 @@ class PersonalController extends Controller
         $user->phone = $request['Phone'];
         $user->expYear = $request['ExpYear'];
         $user->profile = $request['profile'];
+        $user->linked_in = $request['linked_in'];
+        $user->github = $request['github'];
+        $user->my_site = $request['my_site'];
 
         $user->save();
 
