@@ -14,14 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::controller(App\Http\Controllers\UserHomeController::class)->group(function ()
-{
-    // Portfolio
-    Route::get('/', 'index')->name('portfolio');
-    Route::get('/downloadPDF','downloadPDF')->name('downloadPDF');
-});
-
 Route::controller(App\Http\Controllers\HomeController::class)->group(function ()
 {
     // Dashboard

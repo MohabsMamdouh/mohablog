@@ -18,11 +18,7 @@ use Illuminate\Support\Facades\Auth;
 Route::controller(App\Http\Controllers\UserHomeController::class)->group(function ()
 {
     Route::get('/', 'index')->name('portfolio');
+    Route::get('/downloadPDF','downloadPDF')->name('downloadPDF');
 });
 
-
 Auth::routes();
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
