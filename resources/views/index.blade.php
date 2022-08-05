@@ -10,17 +10,17 @@
     <div class="container">
         <div class="row text-center text-white profile-info">
             <div class="row">
-                <div class="col-xl-4">
+                {{-- <div class="col-xl-4">
                     <img class="profile-img" src="{{ asset('storage/users/'.$user->profileImage) }}" alt="{{$user->username}}">
-                </div>
-                <div class="col-xl-8 profile-title text-start p-4">
-                    <h2 class="text-uppercase">
+                </div> --}}
+                <div class="col-xl-8 profile-title text-start p-4" style="margin: auto; text-align: center;">
+                    <h2 class="text-uppercase text-center">
                         <strong>
                             <span style="color: #F1525A">{{ strtok($user->fullName, " ") }}</span>
                             {{ trim(strstr($user->fullName," ")) }}
                         </strong>
                     </h2>
-                    <h4 class="text-white title"><b>{{ $user->title }}<b></h4>
+                    <h4 class="text-white text-center title"><b>{{ $user->title }}<b></h4>
                 </div>
             </div>
         </div>
