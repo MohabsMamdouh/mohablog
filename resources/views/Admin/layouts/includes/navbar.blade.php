@@ -8,12 +8,15 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                    <li>
-                        <a href="{{ route('portfolio') }}" class="nav-link text-white text-center">
+                    <li class="nav-item">
+                        <a href="{{ route('portfolio') }}" class="link text-white text-center">
                             <i class="fa-solid fa-house-chimney "></i><br>
                             {{ __('Portfolio') }}
                         </a>
                     </li>
+                    {{-- <li class="">
+                        <a href="{{ route('portfolio') }}" class="">Hello</a>
+                    </li> --}}
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <img src="{{ asset('storage/users/'.$user->profileImage) }}" alt="MOHAB" style="width: 40px;height: 40px;border-radius: 100%" >

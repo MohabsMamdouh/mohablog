@@ -6,6 +6,14 @@ body {
     background-color: #fff;
 }
 
+.link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #0d6efd;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
 .title .glitch a {
     color: #000;
     text-decoration: none;
@@ -48,6 +56,7 @@ body {
     margin-bottom: 30px;
 }
 
+
 /* Profile Picture Section */
 
 .profilePic {
@@ -62,7 +71,6 @@ body {
     margin-bottom: 0;
 }
 
-
 .profile-pic .picture img {
     width: 220px;
     height: 200px;
@@ -71,9 +79,9 @@ body {
     border: 3px solid #ddd;
 }
 
-@media only screen and (max-width: 776px){
+@media only screen and (max-width: 776px) {
     .profile-pic .picture img {
-        margin:  22%;
+        margin: 22%;
     }
 }
 
@@ -82,6 +90,7 @@ body {
     margin-bottom: 10px;
 }
 
+
 /* Profile Info Section */
 
 .profile-info .info-head,
@@ -89,8 +98,8 @@ body {
     padding: 4px;
 }
 
-.profile-info .info-head  h5,
-.create .info-head  h5 {
+.profile-info .info-head h5,
+.create .info-head h5 {
     font-size: 30px;
     margin-left: 20px;
 }
@@ -126,8 +135,8 @@ body {
     color: #777;
 }
 
-.form input:focus + label,
-.form textarea:focus + label {
+.form input:focus+label,
+.form textarea:focus+label {
     color: darkcyan;
 }
 
@@ -137,11 +146,11 @@ body {
     box-shadow: none;
 }
 
-
 .profile-info .form button,
 .createForm .form button {
     margin-top: 20px;
 }
+
 
 /* Add Skill */
 
@@ -153,6 +162,7 @@ body {
     margin: auto;
 }
 
+
 /* Show Skills */
 
 .show_skill {
@@ -160,10 +170,11 @@ body {
     min-height: 311px;
 }
 
-.show_skill .skill_progress > * {
+.show_skill .skill_progress>* {
     margin-bottom: 30px;
     padding-right: 7%;
 }
+
 
 /* Projects */
 
@@ -172,13 +183,15 @@ body {
     padding: 0;
 }
 
-@media only screen and (min-width: 960px){
+@media only screen and (min-width: 960px) {
     .content .card-deck .card {
         width: 48% !important;
     }
 }
 
+
 /* The popup form - hidden by default */
+
 .form-popup {
     display: none;
     z-index: 99999999999999999999;
@@ -189,7 +202,7 @@ body {
     width: 35%;
 }
 
-@media only screen and (max-width: 776px){
+@media only screen and (max-width: 776px) {
     .form-popup {
         width: 60%;
         left: 15%;
@@ -200,7 +213,7 @@ body {
     position: absolute;
     z-index: 3;
     opacity: 0.5;
-    filter: alpha(opacity = 50);
+    filter: alpha(opacity=50);
     top: 0;
     bottom: 0;
     left: 0;
@@ -214,14 +227,18 @@ body {
 
 
 /* Add styles to the form container */
+
 .form-container {
     max-width: 300px;
     padding: 10px;
     background-color: white;
 }
 
+
 /* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
+
+.form-container input[type=text],
+.form-container input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -229,13 +246,18 @@ body {
     background: #f1f1f1;
 }
 
+
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }
 
+
 /* Set a style for the submit/login button */
+
 .form-container .btn {
     background-color: #04AA6D;
     color: white;
@@ -243,19 +265,25 @@ body {
     border: none;
     cursor: pointer;
     width: 100%;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     opacity: 0.8;
 }
 
+
 /* Add a red background color to the cancel button */
+
 .form-container .cancel {
     background-color: red;
 }
 
+
 /* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
+
+.form-container .btn:hover,
+.open-button:hover {
     opacity: 1;
 }
+
 
 /* Dashboard */
 
