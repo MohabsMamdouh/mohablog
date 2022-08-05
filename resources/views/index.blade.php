@@ -1,5 +1,5 @@
 @php
-    $title  = 'Portfolio - ' . strtok($user->fullName, " ")
+    $title  = 'Portfolio'
 @endphp
 
 @extends('layouts.app')
