@@ -113,7 +113,7 @@
                     @foreach ($projects as $p)
                         <div class="row">
                             <h5 class="text-capitalize"><strong>{{ $p->name }}</strong></h5>
-                            <h6><a href="{{ $p->url }}">{{ $p->url }}</a> <i class="fa-solid fa-link"></i></h6>
+                            <h6><a href="{{ $p->url }}">{{ substr($p->url, 0, 35);  }}</a> <i class="fa-solid fa-link"></i></h6>
                             <p class="text-muted">
                                 {{ $p->caption }}
                             </p>
