@@ -27,24 +27,17 @@
     </div>
 </section>
 
-<section class="Links">
-    <div class="container">
-        <div class="row" align="center">
-            <div class="">
-                <div class="col"><a href="{{ $user->github }}"><img src="https://img.shields.io/badge/Github-0077B5?style=for-the-badge&logo=github&logoColor=white&color=black"/></a></div>
-                <div class="col"><a href="{{ $user->linked_in }}"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a></div>
-                <div class="col"><a href="{{ $user->my_site }}"><img src="https://img.shields.io/badge/mySite-red?style=for-the-badge&logo=appveyor&logoColor=white"/></a></div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="portfolio">
     <div class="container">
         <div class="row">
             <div class="col-xl-8 section">
                 <div class="col-12 section-content profile">
                     <h2 class="text-capitalize"><strong>{{ __('Profile') }}</strong></h2>
+                    <div class="row links" align="center">
+                        <div class="col"><a href="{{ $user->github }}"><img src="https://img.shields.io/badge/Github-0077B5?style=for-the-badge&logo=github&logoColor=white&color=black"/></a></div>
+                        <div class="col"><a href="{{ $user->linked_in }}"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a></div>
+                        <div class="col"><a href="{{ $user->my_site }}"><img src="https://img.shields.io/badge/mySite-red?style=for-the-badge&logo=appveyor&logoColor=white"/></a></div>
+                    </div>
                     <div class="row">
                         <div class="col">
                             <p>
