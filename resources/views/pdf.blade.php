@@ -8,7 +8,7 @@
 
     <style>
         @page {
-            margin: 140px;
+            margin: 140px 25px 100px 25px;
         }
 
         * {
@@ -44,7 +44,10 @@
         }
 
         .header {
-            margin-bottom: 10px;
+            top: -136px;
+            left: -60px;
+            right: -60px;
+            width: 100%;
         }
 
         .full-name {
