@@ -41,7 +41,14 @@
                     <div class="row">
                         <div class="col">
                             <p>
-                                {{ $user->profile }}
+                                @php
+                                    $profile = explode(".", $user->profile)
+                                @endphp
+                                <ul>
+                                    @for ($i = 0; $i < count($profile) - 1; $i++)
+                                        <li> {{ $profile[$i] }} </li>
+                                    @endfor
+                                </ul>
                             </p>
                         </div>
                     </div>
@@ -161,7 +168,7 @@
                                 <li><i class="fa-solid fa-location-dot"></i></li>
                                 <li><i class="fa-solid fa-envelope"></i></li>
                                 <li><i class="fa-solid fa-file-pdf"></i></li>
-                                <li><i class="fa-solid fa-id-card-clip"></i></li>
+                                {{-- <li><i class="fa-solid fa-id-card-clip"></i></li> --}}
                             </ul>
                         </div>
                         <div class="col col-10">
@@ -169,7 +176,7 @@
                                 <li><a href="#">{{ $user->address }}</a></li>
                                 <li class="text-lowercase"><a href="#">{{ $user->email }}</a></li>
                                 <li><a href="{{ route('downloadPDF') }}">{{ __('Download CV') }}</a></li>
-                                <li><a href="#">{{ __('Contact me') }}</a></li>
+                                {{-- <li><a href="#">{{ __('Contact me') }}</a></li> --}}
                             </ul>
                         </div>
                     </div>
@@ -238,7 +245,7 @@
                                             $level = 4;
                                         @endphp
                                     @elseif ($sl->level == "Level 5")
-                                        {{ __('Fluent') }}
+                                        {{ __('Native') }}
                                         @php
                                             $level = 5;
                                         @endphp

@@ -44,7 +44,6 @@
         }
 
         .header {
-            position: fixed;
             top: -136px;
             left: -60px;
             right: -60px;
@@ -175,10 +174,6 @@
             margin-top: 50px;
         }
 
-        .page-break {
-            page-break-after: always;
-        }
-
     </style>
 </head>
 <body>
@@ -213,15 +208,18 @@
                 <div class="about">
                     <span class="position">{{ $user->title }}</span>
                     <span class="desc">
-                        {{ $user->profile }}
+                        @php
+                            $profile = explode(".", $user->profile)
+                        @endphp
+                        <ul>
+                            @for ($i = 0; $i < count($profile) - 1; $i++)
+                                <b><li> {{ $profile[$i] }} </li></b>
+                            @endfor
+                        </ul>
                     </span>
                 </div>
             </div>
-        </div>
-    </header>
 
-    <section>
-        <div class="container">
             <div class="details">
                 <div class="section unbreakable">
                     <div class="section__title">{{ __('Experience') }}</div>
@@ -240,33 +238,7 @@
                         @endforeach
                     </div>
                 </div>
-                {{-- <div class="section">
-                    <div class="section__title">Education</div>
-                    <div class="section__list">
-                        <div class="section__list-item">
-                            <div class="left">
-                                <div class="name">Sample Institute of technology</div>
-                                <div class="addr">San Fr, CA</div>
-                                <div class="duration">Jan 2011 - Feb 2015</div>
-                            </div>
-                            <div class="right">
-                                <div class="name">Fr developer</div>
-                                <div class="desc">did This and that</div>
-                            </div>
-                        </div>
-                        <div class="section__list-item">
-                            <div class="left">
-                                <div class="name">Akount</div>
-                                <div class="addr">San Monica, CA</div>
-                                <div class="duration">Jan 2011 - Feb 2015</div>
-                            </div>
-                            <div class="right">
-                                <div class="name">Fr developer</div>
-                                <div class="desc">did This and that</div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
+
                 <div class="section unbreakable">
                     <div class="section__title">{{ __('Projects') }}</div>
                     <div class="section__list">
@@ -278,9 +250,15 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="page-break"></div>
-                <div class="section unbreakable" id="skill" style="margin-top: 20px;">
+            </div>
+        </div>
+    </section>
 
+    <section>
+        <div class="container">
+            <div class="details">
+
+                <div class="section unbreakable" id="skill" style="margin-top: 20px;">
                     <div class="section__title">{{ __ ('Skills') }}</div>
                     <div class="skills">
                         @foreach ($skills as $s)
