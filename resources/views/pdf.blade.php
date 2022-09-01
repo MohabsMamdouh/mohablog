@@ -194,7 +194,7 @@
                 </div>
                 <div class="contact-info">
                     <span class="email">Linked In: </span>
-                    <span class="email-val"><a style="margin-top:5px;" href="{{ $user->linked_in }}"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a></span>
+                    <span class="email-val"><a href="{{ $user->linked_in }}"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a></span>
                 </div>
                 <div class="contact-info">
                     <span class="phone">Github: </span>
