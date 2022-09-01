@@ -171,6 +171,10 @@
             margin-top: 50px;
         }
 
+        .page-break {
+            page-break-after: always;
+        }
+
     </style>
 </head>
 <body>
@@ -264,6 +268,7 @@
                         @endforeach
                     </div>
                 </div>
+                <div class="page-break"></div>
                 <div class="section unbreakable" id="skill">
 
                     <div class="section__title">{{ __ ('Skills') }}</div>
