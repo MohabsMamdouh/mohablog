@@ -182,7 +182,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <section>
         <div class="container">
             <div class="header unbreakable">
                 <div class="full-name">
