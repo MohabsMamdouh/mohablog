@@ -297,7 +297,43 @@
                     <div class="section__list">
                         <div class="section__list-item">
                             @for ($i = 0; $i < count($sLanguages); $i++)
-                                {{ $sLanguages[$i]->languageName }}
+                                {{ $sLanguages[$i]->languageName }} (
+
+                                @php
+                                    $level = 0;
+                                @endphp
+                                @if ($sLanguages[$i]->level == "Level 0")
+                                    {{ __('No Knowallage') }}
+                                    @php
+                                        $level = 0;
+                                    @endphp
+                                @elseif ($sLanguages[$i]->level == "Level 1")
+                                    {{ __('Elementary') }}
+                                    @php
+                                        $level = 1;
+                                    @endphp
+                                @elseif ($sLanguages[$i]->level == "Level 2")
+                                    {{ __('Low intermediate') }}
+                                    @php
+                                        $level = 2;
+                                    @endphp
+                                @elseif ($sLanguages[$i]->level == "Level 3")
+                                    {{ __('	High intermediate') }}
+                                    @php
+                                        $level = 3;
+                                    @endphp
+                                @elseif ($sLanguages[$i]->level == "Level 4")
+                                    {{ __('Advanced') }}
+                                    @php
+                                        $level = 4;
+                                    @endphp
+                                @elseif ($sLanguages[$i]->level == "Level 5")
+                                    {{ __('Native') }}
+                                    @php
+                                        $level = 5;
+                                    @endphp
+                                @endif
+                                )
                                 @if (isset($sLanguages[$i + 1]))
                                     ,
                                 @endif
