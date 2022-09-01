@@ -44,6 +44,7 @@
         }
 
         .header {
+            position: fixed;
             top: -136px;
             left: -60px;
             right: -60px;
