@@ -192,21 +192,16 @@
                     <span class="phone">Phone: </span>
                     <span class="phone-val">{{ $user->phone }}</span>
                 </div>
-                <div class="row links" style="margin-bottom: 25px;" align="center">
-                    <div class="col-4"><a href="{{ $user->github }}"><img src="https://img.shields.io/badge/Github-0077B5?style=for-the-badge&logo=github&logoColor=white&color=black"/></a></div>
-                    <div class="col-4"><a href="{{ $user->linked_in }}"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a></div>
-                    <div class="col-4"><a href="{{ $user->my_site }}"><img src="https://img.shields.io/badge/mySite-red?style=for-the-badge&logo=appveyor&logoColor=white"/></a></div>
-                </div>
                 <div class="contact-info">
                     <span class="email">Linked In: </span>
-                    <span class="email-val"><a href="{{ $user->linked_in }}">{{ $user->linked_in }}</a></span>
+                    <span class="email-val"><a href="{{ $user->linked_in }}"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a></span>
                 </div>
                 <div class="contact-info">
                     <span class="phone">Github: </span>
-                    <span class="phone-val"><a href="{{ $user->github }}">{{ $user->github }}</a></span>
+                    <span class="phone-val"><a href="{{ $user->github }}"><img src="https://img.shields.io/badge/Github-0077B5?style=for-the-badge&logo=github&logoColor=white&color=black"/></a></span>
                     <span class="separator"></span>
                     <span class="phone">Website: </span>
-                    <span class="phone-val"><a href="{{ $user->my_site }}">{{ $user->my_site }}</a></span>
+                    <span class="phone-val"><a href="{{ $user->my_site }}"><img src="https://img.shields.io/badge/mySite-red?style=for-the-badge&logo=appveyor&logoColor=white"/></a></span>
                 </div>
                 <div class="about">
                     <span class="position">{{ $user->title }}</span>
