@@ -182,7 +182,7 @@
     </style>
 </head>
 <body>
-    <section>
+    <header>
         <div class="container">
             <div class="header unbreakable">
                 <div class="full-name">
@@ -217,6 +217,11 @@
                     </span>
                 </div>
             </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
             <div class="details">
                 <div class="section unbreakable">
                     <div class="section__title">{{ __('Experience') }}</div>
