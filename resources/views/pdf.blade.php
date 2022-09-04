@@ -244,7 +244,7 @@
                     <div class="section__list">
                         @foreach ($projects as $p)
                             <div class="section__list-item">
-                                <div class="name"><a href="{{ $p->url }}">{{ $p->name }} </a></div>
+                                <div class="name"><a href="{{ $p->appURL ? $p->appURL : $p->url }}">{{ $p->name }} </a></div>
                                 <div class="text">{{ $p->caption }}</div>
                             </div>
                         @endforeach
