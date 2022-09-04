@@ -42,8 +42,14 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="input-group">
-                                        <input type="text" name="URL" id="URL" class="form-control" value="{{ $project->url }}" placeholder="URL" required>
-                                        <label for="URL">{{ __('URL') }}</label>
+                                        <input type="text" name="appURL" id="appURL" value="{{ $project->appURL }}" class="form-control" placeholder="App URL">
+                                        <label for="appURL">{{ __('App URL') }}</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input type="text" name="URL" id="URL" class="form-control" value="{{ $project->url }}" placeholder="Github URL" required>
+                                        <label for="URL">{{ __('Github URL') }}</label>
                                     </div>
                                 </div>
                             </div>

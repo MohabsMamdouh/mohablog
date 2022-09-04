@@ -46,7 +46,8 @@
                                 <a class="text-danger open-button" onclick="openForm{{ $i }}()" id="delete-2" href="#" title="Delete Skill"><i class="fa-solid fa-trash"></i></a>
                             </div>
                         </div>
-                        <h6><a href="{{ $projects[$i]->url }}">{{ $projects[$i]->url }}</a></h6>
+                        <h6>{{ __('Github:') }} <a href="{{ $projects[$i]->url }}">{{ $projects[$i]->url }}</a></h6>
+                        <h6>{{ __('App URL:') }} <a href="{{ $projects[$i]->appURL }}">{{ $projects[$i]->appURL }}</a></h6>
                         <p class="card-text">{{ $projects[$i]->caption }}</p>
                         <p class="card-text"><b>{{ __('Technology Stack: ') }}</b>{{ $projects[$i]->techmologyStack }}</p>
                     </div>

@@ -125,7 +125,7 @@
                         <div class="row">
                             <h5 class="text-capitalize">
                                 <strong>{{ $p->name }}</strong>
-                                <a href="{{ $p->url }}"><i class="fa-solid fa-link"></i></a>
+                                <a href="{{ $p->appURL ? $p->appURL : $p->url }}"><i class="fa-solid fa-link"></i></a>
                             </h5>
                             <p class="text-muted">
                                 {{ $p->caption }}

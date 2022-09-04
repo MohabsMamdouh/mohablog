@@ -39,7 +39,6 @@ class ProjectController extends Controller
     {
         $request->validate([
             'projectName' => 'required',
-            'URL' => 'required',
             'caption' => 'required',
             'TechnologyStack' => 'required',
             'endDate' => 'required',
@@ -51,6 +50,7 @@ class ProjectController extends Controller
         $project->caption = $request['caption'];
         $project->techmologyStack = $request['TechnologyStack'];
         $project->endDate = $request['endDate'];
+        $project->appURL = ($request['appURL'] != "") ? $request['appURL'] : $request['URL'] ;
 
         $project->save();
 
@@ -91,7 +91,6 @@ class ProjectController extends Controller
     {
         $request->validate([
             'projectName' => 'required',
-            'URL' => 'required',
             'caption' => 'required',
             'TechnologyStack' => 'required',
             'endDate' => 'required',
@@ -106,6 +105,8 @@ class ProjectController extends Controller
         $p->caption = $request['caption'];
         $p->techmologyStack = $request['TechnologyStack'];
         $p->endDate = $request['endDate'];
+
+        $project->appURL = ($request['appURL'] != "") ? $request['appURL'] : $request['URL'] ;
 
         $p->save();
 
