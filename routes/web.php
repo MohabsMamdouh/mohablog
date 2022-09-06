@@ -19,7 +19,6 @@ Route::controller(App\Http\Controllers\UserHomeController::class)->group(functio
 {
     Route::get('/', 'index')->name('portfolio');
     Route::get('/downloadPDF','downloadPDF')->name('downloadPDF');
-    Route::get('/view','pdfview')->name('dd');
 });
 
 Auth::routes();

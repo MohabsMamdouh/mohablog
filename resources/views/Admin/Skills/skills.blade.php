@@ -38,6 +38,8 @@
                     $types = ['Backend', 'Fontend', 'Database', 'Prior Knowledge', 'Little Knowledge',  'Other Skills']
                 @endphp
 
+                {{ dd($skills) }}
+
                 @foreach ($types as $type)
                     <div class="skill-content">
                         <h3><B>{{ $type }}</B></h3>
