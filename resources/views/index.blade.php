@@ -66,7 +66,7 @@
                             @if (($i + 1) % 2 != 0)
                                 </div><div class="row flex">
                             @endif
-                            <div class="col">
+                            <div class="col-sm-6">
                                 <h5 class="text-capitalize"><strong>{{ $types[$i] }}</strong></h5>
                                 <ul>
                                     @for ($x = 0; $x < count($skills); $x++)
