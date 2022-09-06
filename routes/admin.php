@@ -100,20 +100,3 @@ Route::controller(App\Http\Controllers\LanguageController::class)->group(functio
     // Delete Speaking Language
     Route::get('speaking-language/{id}/delete', 'destroy')->name('deleteLangs');
 });
-
-Route::controller(App\Http\Controllers\ExtensionController::class)->group(function ()
-{
-    // Show Extensions
-    Route::get('/extensions/show', 'index')->name('showExtensions');
-
-    // Add New Extension
-    Route::get('/extensions/create', 'create')->name('createExtensions');
-    Route::post('/extensions/store', 'store')->name('storeExtensions');
-
-    // Update Extensions
-    Route::get('/extensions/{id}/edit', 'edit')->name('editExtensions');
-    Route::post('/extensions/{id}/update', 'update')->name('updateExtensions');
-
-    // Delete Extension
-    Route::get('extensions/{id}/delete', 'destroy')->name('deleteExtensions');
-});

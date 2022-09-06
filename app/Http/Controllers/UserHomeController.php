@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\extension;
 use App\Models\Projects;
 use App\Models\Skill;
 use App\Models\SpeakingLanguage;
@@ -24,24 +23,29 @@ class UserHomeController extends BaseController
      */
     public function index()
     {
-        $projects = Projects::all();
-        $skills = Skill::orderBy('percentage', 'DESC')->take(4)->get();
+        $projects = Projects::orderBy('endDate', 'DESC')->get();
+        $skills = Skill::all();
         $sLanguages = SpeakingLanguage::all();
         $user = User::first();
         $works = WorkExp::all();
-        $frameworks = extension::where('type', "=", 'Framework')->take(3)->get();
-        $editors = extension::where('type', "=", 'Editor')->take(3)->get();
-        $operatings = extension::where('type', "=", 'Operating System')->take(3)->get();
         return view('index',[
             'projects' => $projects,
             'skills' => $skills,
             'sLanguages' => $sLanguages,
             'works' => $works,
             'user' => $user,
-            'frameworks' => $frameworks,
-            'editors' => $editors,
-            'operatings' => $operatings,
         ]);
+    }
+
+    public function pdfview()
+    {
+        $projects = Projects::orderBy('endDate', 'DESC')->get();
+        $skills = Skill::all();
+        $sLanguages = SpeakingLanguage::all();
+        $user = User::first();
+        $works = WorkExp::all();
+
+        return view('pdf', compact('projects', 'skills', 'sLanguages', 'user', 'works'));
     }
 
     /**
@@ -53,8 +57,8 @@ class UserHomeController extends BaseController
     public function downloadPDF()
     {
         set_time_limit(-100);
-        $projects = Projects::all();
-        $skills = Skill::orderBy('percentage', 'DESC')->get();
+        $projects = Projects::orderBy('endDate', 'DESC')->get();
+        $skills = Skill::all();
         $sLanguages = SpeakingLanguage::all();
         $user = User::first();
         $works = WorkExp::all();

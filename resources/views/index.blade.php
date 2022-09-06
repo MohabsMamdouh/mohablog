@@ -55,68 +55,35 @@
                 </div>
 
                 <div class="col-12 section-content about">
-                    <h2 class="text-capitalize"><strong>{{ __('About Me') }}</strong></h2>
-                    <div class="row">
-                        <div class="col col-4">
-                            <ul class="list-unstyled text-capitalize">
-                                <li>{{ __('Languages:') }}</li>
-                                <li>{{ __('Framework:') }}</li>
-                                <li>{{ __('Editor Journey:') }}</li>
-                                <li>{{ __('Operating System:') }}</li>
-                            </ul>
-                        </div>
-                        <div class="col col-8">
-                            <ul class="list-unstyled text-muted text-capitalize">
-                                <li class="last">
-                                    @for ($i = 0; $i < count($skills); $i++)
-                                        {{ $skills[$i]->languageName }}
-                                        @if (isset($skills[$i + 1]))
-                                             -
+                    <h2 class="text-capitalize"><strong>{{ __('Skills') }}</strong></h2>
+
+                    @php
+                        $types = ['Backend', 'Fontend', 'Database', 'Prior Knowledge', 'Little Knowledge',  'Other Skills']
+                    @endphp
+
+                    <div class="row flex">
+                        @for ($i = 0; $i < count($types); $i++)
+                            @if (($i + 1) % 2 != 0)
+                                </div><div class="row flex">
+                            @endif
+                            <div class="col">
+                                <h5 class="text-capitalize"><strong>{{ $types[$i] }}</strong></h5>
+                                <ul>
+                                    @for ($x = 0; $x < count($skills); $x++)
+                                        @if ($skills[$x]->type == $types[$i])
+                                            <li>
+                                                {{ $skills[$x]->languageName }}
+                                                @if ($skills[$x]->main != 'null')
+                                                    - {{ $skills[$x]->main }}
+                                                @endif
+                                            </li>
                                         @endif
                                     @endfor
-                                </li>
-                                <li class="">
-                                    @for ($i = 0; $i < count($frameworks); $i++)
-                                        {{ $frameworks[$i]->name }}
-                                        @if (isset($frameworks[$i + 1]))
-                                             ,
-                                        @endif
-                                    @endfor
-                                </li>
-                                <li class="">
-                                    @for ($i = 0; $i < count($editors); $i++)
-                                        {{ $editors[$i]->name }}
-                                        @if (isset($editors[$i + 1]))
-                                             ,
-                                        @endif
-                                    @endfor
-                                </li>
-                                <li class="">
-                                    @for ($i = 0; $i < count($operatings); $i++)
-                                        {{ $operatings[$i]->name }}
-                                        @if (isset($operatings[$i + 1]))
-                                             ,
-                                        @endif
-                                    @endfor
-                                </li>
-                            </ul>
-                        </div>
+                                </ul>
+                            </div>
+                        @endfor
                     </div>
-                    <div class="row">
-                        <h5 class="text-capitalize"><strong>{{ __('Experience') }}</strong></h5>
-                        <div class="col col-4">
-                            <ul class="list-unstyled text-capitalize">
-                                <li>{{ __('Total experience year:') }}</li>
-                                <li>{{ __('current position:') }}</li>
-                            </ul>
-                        </div>
-                        <div class="col col-8">
-                            <ul class="list-unstyled text-muted text-capitalize">
-                                <li>+{{ $user->expYear . __(' Year') }} </li>
-                                <li>{{ $user->currentPosition }}</li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div class="col-12 section-content latest-project">
@@ -185,28 +152,21 @@
                 </div>
 
                 <div class="col-12 side-section-content skills">
-                    <h2 class="text-capitalize"><strong>{{ __('Skills') }}</strong></h2>
-                    @foreach ($skills as $s)
-                        <div class="row">
-                            <div class="row">
-                                <div class="col col-7">{{ $s->languageName }}</div>
-                                <div class="col col-3 text-muted">
-                                    @if ($s->percentage >= 90)
-                                        {{ __('Pro') }}
-                                    @elseif ($s->percentage >= 75)
-                                        {{ __('Intermidate') }}
-                                    @else
-                                        {{ __('Begginer') }}
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="row m-auto">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: {{ $s->percentage }}%;margin-left: -12px;background-color:#F1525A;opacity: 0.6;" aria-valuenow="{{ $s->percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
+                    <h2 class="text-capitalize"><strong>{{ __('Experience') }}</strong></h2>
+                    <div class="row">
+                        <div class="col col-4">
+                            <ul class="list-unstyled text-capitalize">
+                                <li>{{ __('experience:') }}</li>
+                                <li>{{ __('position:') }}</li>
+                            </ul>
                         </div>
-                    @endforeach
+                        <div class="col col-8">
+                            <ul class="list-unstyled text-muted text-capitalize">
+                                <li>+{{ $user->expYear . __(' Year') }} </li>
+                                <li>{{ $user->currentPosition }}</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-12 side-section-content language">

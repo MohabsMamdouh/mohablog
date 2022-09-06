@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class SkillsController extends Controller
 {
+    private $types = ['Backend', 'Fontend', 'Database', 'Little Knowledge', 'Prior Knowledge', 'Other Skills'];
     /**
      * Display a listing of the resource.
      *
@@ -38,12 +39,13 @@ class SkillsController extends Controller
     {
         $request->validate([
             'languageName' => 'required',
-            'percentage' => 'required',
+            'type' => 'in:' . implode(',', $this->types),
         ]);
 
         $skill = new Skill();
         $skill->languageName = $request['languageName'];
-        $skill->percentage = $request['percentage'];
+
+        $skill->type = $request['type'];
 
         if ($request['main'] != null) {
             $skill->main = $request['main'];
@@ -74,7 +76,8 @@ class SkillsController extends Controller
      */
     public function edit($id)
     {
-
+        $skill = Skill::where('id', $id)->first();
+        return view('Admin.Skills.edit', compact('skill'));
     }
 
     /**
@@ -88,14 +91,14 @@ class SkillsController extends Controller
     {
         $request->validate([
             'languageName' => 'required',
-            'percentage' => 'required',
+            'type' => 'in:' . implode(',', $this->types),
         ]);
-
-        // dd($request['main']);
 
         $skill = Skill::where('id', $id)->first();
         $skill->languageName = $request['languageName'];
-        $skill->percentage = $request['percentage'];
+
+        $skill->type = $request['type'];
+
         if ($request['main'] != null) {
             $skill->main = $request['main'];
         } else {

@@ -1,5 +1,5 @@
 @php
-    $title = "Add Skill"
+    $title = "Update Skill"
 @endphp
 
 @extends('Admin.layouts.page')
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col col-11 Center">
                 <h4 class="glitch text-capitalize" data-text="Add Skill">
-                    <a href="{{ route('home') }}">{{ __('Admin') }} &#8827;</a> <a href="{{ route('skills') }}">{{ __('Skills') }} &#8827;</a> {{ __('Add Skill') }}
+                    <a href="{{ route('home') }}">{{ __('Admin') }} &#8827;</a> <a href="{{ route('skills') }}">{{ __('Skills') }} &#8827;</a> {{ __('Update Skill') }}
                 </h4>
             </div>
         </div>
@@ -24,17 +24,17 @@
             <div class="section-content create">
                 <div class="row">
                     <div class="col-8 head info-head">
-                        <h5><i class="fa-solid fa-fill-drip"></i> <span>{{ __('Create Skill') }}</span></h5>
+                        <h5><i class="fa-solid fa-fill-drip"></i> <span>{{ __('Update Skill') }}</span></h5>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form">
-                        <form action="{{ route('storeSkills') }}" method="post">
+                        <form action="{{ route('updateSkills', ['id' => $skill->id]) }}" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col">
                                     <div class="input-group">
-                                        <input type="text" name="languageName" id="languageName" class="form-control" placeholder="language Name" required>
+                                        <input type="text" name="languageName" id="languageName" value="{{ $skill->languageName }}" class="form-control" placeholder="language Name" required>
                                         <label for="languageName">{{ __('language Name') }}</label>
                                     </div>
                                 </div>
@@ -48,7 +48,11 @@
                                                 $types = ['Backend', 'Fontend', 'Database', 'Little Knowledge', 'Prior Knowledge', 'Other Skills']
                                             @endphp
                                             @foreach ($types as $type)
-                                                <option value="{{ $type }}">{{ $type }}</option>
+                                                <option value="{{ $type }}"
+                                                @if ($skill->type == $type)
+                                                    selected="true"
+                                                @endif
+                                                >{{ $type }}</option>
                                             @endforeach
                                         </select>
                                         <label for="type">{{ __('Skill Type') }}</label>
@@ -59,7 +63,11 @@
                                 <div class="col">
                                     <div class="input-group">
                                         <div>
-                                            <input style="width: 20% !important" type="checkbox" value="primary" name="main" id="main">
+                                            <input style="width: 20% !important" type="checkbox" value="primary" name="main" id="main"
+                                            @if ($skill->main == 'primary')
+                                                checked
+                                            @endif
+                                            >
                                             <span class="text-muted">{{ __('Primary Language') }}</span>
                                         </div>
                                         <label for="main">{{ __('Main') }}</label>
@@ -70,7 +78,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="input-group">
-                                        <button type="submit" class="btn btn-primary">{{ __('Add Skill') }}</button>
+                                        <button type="submit" class="btn btn-primary">{{ __('Update Skill') }}</button>
                                     </div>
                                 </div>
                             </div>

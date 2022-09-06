@@ -36,13 +36,6 @@
         >
             <a href="{{ route('showLangs') }}">{{ __('Speaking Language Section') }}</a>
         </li>
-        <li
-        @if (Route::currentRouteName() == 'showExtensions')
-            class="active"
-        @endif
-        >
-            <a href="{{ route('showExtensions') }}">{{ __('Extension') }}</a>
-        </li>
     </ul>
 </div>
 

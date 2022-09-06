@@ -174,6 +174,34 @@
             margin-top: 50px;
         }
 
+        .row {
+            width: 90%;
+            margin: auto;
+            min-height: 80px;
+            display: flex;
+        }
+
+        .col {
+            width: 45%;
+            padding: 5px;
+            margin-bottom: 10px
+        }
+
+        .row .col:first-child {
+            float: left;
+        }
+
+        .row .col:last-child {
+            float: right;
+        }
+
+        .skills .row:first-child {
+            display: none;
+        }
+
+        .clear{
+            clear: both;
+        }
     </style>
 </head>
 <body>
@@ -258,35 +286,35 @@
         <div class="container">
             <div class="details">
 
-                <div class="section unbreakable" id="skill" style="margin-top: 20px;">
+                <div class="section unbreakable" id="skill">
                     <div class="section__title">{{ __ ('Skills') }}</div>
                     <div class="skills">
-                        @foreach ($skills as $s)
-                            <div class="skills__item">
-                                <div class="left">
-                                    <div class="name">
-                                        {{ $s->languageName }}
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    @php
-                                        $count = 0
-                                    @endphp
-                                    @for ($i = 0; $i < (($s->percentage / 20) - 1); $i++)
-                                        <input  id="ck{{ $i }}" type="checkbox" checked/>
-                                        <label for="ck{{ $i }}"></label>
-                                        @php
-                                            $count++
-                                        @endphp
-                                    @endfor
+                        @php
+                            $types = ['Backend', 'Fontend', 'Database', 'Prior Knowledge', 'Little Knowledge',  'Other Skills']
+                        @endphp
 
-                                    @for ($i = $count; $i < 5; $i++)
-                                        <input  id="ck{{ $i }}" type="checkbox"/>
-                                        <label for="ck{{ $i }}"></label>
-                                    @endfor
+                        <div class="row">
+                            @for ($i = 0; $i < count($types); $i++)
+                                @if (($i + 1) % 2 != 0)
+                                    </div><div class="clear"></div><div class="row">
+                                @endif
+                                <div class="col">
+                                    <h5 class="text-capitalize"><strong>{{ $types[$i] }}</strong></h5>
+                                    <ul>
+                                        @for ($x = 0; $x < count($skills); $x++)
+                                            @if ($skills[$x]->type == $types[$i])
+                                                <li>
+                                                    {{ $skills[$x]->languageName }}
+                                                    @if ($skills[$x]->main != 'null')
+                                                        - {{ $skills[$x]->main }}
+                                                    @endif
+                                                </li>
+                                            @endif
+                                        @endfor
+                                    </ul>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endfor
+                        </div>
                     </div>
                 </div>
 
