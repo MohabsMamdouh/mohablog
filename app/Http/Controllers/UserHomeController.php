@@ -16,10 +16,12 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class UserHomeController extends BaseController
 {
+
     /**
-     * Display a listing of the resource.
+     * It gets all the projects, skills, speaking languages, work experiences, and the user from the
+     * database and then returns the index view with all the data
      *
-     * @return \Illuminate\Http\Response
+     * @return The index view is being returned.
      */
     public function index()
     {
@@ -37,6 +39,11 @@ class UserHomeController extends BaseController
         ]);
     }
 
+    /**
+     * It gets all the data from the database and passes it to the view
+     *
+     * @return The view pdf.blade.php
+     */
     public function pdfview()
     {
         $projects = Projects::orderBy('endDate', 'DESC')->get();
@@ -49,10 +56,10 @@ class UserHomeController extends BaseController
     }
 
     /**
-     * Display the specified resource.
+     * It takes the data from the database and passes it to the view, then it loads the view and
+     * downloads it as a pdf
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return a pdf file.
      */
     public function downloadPDF()
     {
