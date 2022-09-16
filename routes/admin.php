@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('dashboard')->name('dashboard.')->controller(App\Http\Controllers\Admin\HomeController::class)->group(function ()
+Route::controller(App\Http\Controllers\Admin\HomeController::class)->group(function ()
 {
     // Dashboard
-    Route::get('/', 'index')->name('show');
+    Route::get('/', 'index')->name('home');
 });
 
 Route::prefix('personal')->name('info.')->controller(App\Http\Controllers\Admin\PersonalController::class)->group(function ()

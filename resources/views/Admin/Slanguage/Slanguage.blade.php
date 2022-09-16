@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col col-11 Center">
                 <h4 class="glitch text-capitalize" data-text="Speaking Language">
-                    <a href="{{ route('dashboard.show') }}">{{ __('Admin') }} &#8827;</a> {{ __('Speaking Language') }}
+                    <a href="{{ route('home') }}">{{ __('Dashboard') }} &#8827;</a> {{ __('Speaking Language') }}
                 </h4>
             </div>
         </div>

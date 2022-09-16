@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col col-11 Center">
                 <h4 class="glitch text-capitalize" data-text="Edit Work Experiences">
-                    <a href="{{ route('dashboard.show') }}">{{ __('Admin') }} &#8827;</a> <a href="{{ route('works.show') }}">{{ __('Work Experiences') }} &#8827;</a> {{ __('Edit Work Experience') }}
+                    <a href="{{ route('home') }}">{{ __('Dashboard') }} &#8827;</a> <a href="{{ route('works.show') }}">{{ __('Work Experiences') }} &#8827;</a> {{ __('Edit Work Experience') }}
                 </h4>
             </div>
         </div>
