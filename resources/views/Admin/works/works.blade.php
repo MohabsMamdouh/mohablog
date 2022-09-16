@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col col-11 Center">
                 <h4 class="glitch text-capitalize" data-text="Work Experience">
-                    <a href="{{ route('home') }}">{{ __('Admin') }} &#8827;</a> {{ __('Work Experience') }}
+                    <a href="{{ route('dashboard.show') }}">{{ __('Admin') }} &#8827;</a> {{ __('Work Experience') }}
                 </h4>
             </div>
         </div>
@@ -21,7 +21,7 @@
 <div class="buttons">
     <div class="row">
         <div class="col">
-            <a href="{{ route('createWork') }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> {{ __('Add Work Experience') }}</a>
+            <a href="{{ route('works.create') }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> {{ __('Add Work Experience') }}</a>
         </div>
     </div>
 </div>
@@ -40,7 +40,7 @@
                         <div class="row">
                             <h5 class="card-title col font-weight-bold text-uppercase">{{ $works[$i]->companyName }}</h5>
                             <div class="col-1 text-end update">
-                                <a class="text-success" href="{{ route('editWork', ['id' => $works[$i]->id]) }}" title="Update Project"><i class="fa-solid fa-edit"></i></a>
+                                <a class="text-success" href="{{ route('works.edit', ['id' => $works[$i]->id]) }}" title="Update Project"><i class="fa-solid fa-edit"></i></a>
                             </div>
                             <div class="col-1 text-end remove">
                                 <a class="text-danger open-button" onclick="openForm{{ $i }}()" id="delete-2" href="#" title="Delete Skill"><i class="fa-solid fa-trash"></i></a>
@@ -74,7 +74,7 @@
             <div class="card-body text-danger">
                 <h5 class="card-title">{{ __('Delete the project "') . $works[$i]->companyName . '"?' }}</h5>
                 <p class="card-text">
-                    <a href="{{ route('deleteWork', ['id' => $works[$i]->id]) }}" class="card-link">{{ __('Delete') }}</a>
+                    <a href="{{ route('works.delete', ['id' => $works[$i]->id]) }}" class="card-link">{{ __('Delete') }}</a>
                     <a href="#" class="card-link cancel" onclick="closeForm{{ $i }}()">{{ __('Cancel') }}</a>
                 </p>
             </div>

@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col col-11 Center">
                 <h4 class="glitch text-capitalize" data-text="Add Speaking Language">
-                    <a href="{{ route('home') }}">{{ __('Admin') }} &#8827;</a> <a href="{{ route('showLangs') }}">{{ __('Speaking Language') }} &#8827;</a> {{ __('Add Speaking Language') }}
+                    <a href="{{ route('dashboard.show') }}">{{ __('Admin') }} &#8827;</a> <a href="{{ route('langs.show') }}">{{ __('Speaking Language') }} &#8827;</a> {{ __('Add Speaking Language') }}
                 </h4>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="row">
                     <div class="form">
-                        <form action="{{ route('storeLangs') }}" method="post">
+                        <form action="{{ route('langs.store') }}" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col">

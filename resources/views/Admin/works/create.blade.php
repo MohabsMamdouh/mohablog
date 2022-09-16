@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col col-11 Center">
                 <h4 class="glitch text-capitalize" data-text="Work Experiences">
-                    <a href="{{ route('home') }}">{{ __('Admin') }} &#8827;</a> <a href="{{ route('showWorks') }}">{{ __('Work Experiences') }} &#8827;</a> {{ __('Add Work Experience') }}
+                    <a href="{{ route('dashboard.show') }}">{{ __('Admin') }} &#8827;</a> <a href="{{ route('works.show') }}">{{ __('Work Experiences') }} &#8827;</a> {{ __('Add Work Experience') }}
                 </h4>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="row">
                     <div class="form">
-                        <form action="{{ route('storeWork') }}" method="post">
+                        <form action="{{ route('works.store') }}" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col">

@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col col-11 Center">
                 <h4 class="glitch text-capitalize" data-text="personal info">
-                    <a href="{{ route('home') }}">{{ __('Admin') }} &#8827;</a> {{ __('personal info') }}
+                    <a href="{{ route('dashboard.show') }}">{{ __('Admin') }} &#8827;</a> {{ __('personal info') }}
                 </h4>
             </div>
         </div>
@@ -37,7 +37,7 @@
 
                 <div class="row">
                     <div class="form">
-                        <form action="{{ route('updateProfileImage') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('info.image') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <input type="hidden" name="id" value="{{ $user->id }}">
@@ -62,7 +62,7 @@
                     </div>
                     <div class="row">
                         <div class="form">
-                            <form action="{{ route('updateInfo') }}" method="post">
+                            <form action="{{ route('info.update') }}" method="post">
                                 @csrf
                                 <div class="row">
                                     <input type="hidden" name="id" value="{{ $user->id }}">

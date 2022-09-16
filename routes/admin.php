@@ -14,89 +14,89 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(App\Http\Controllers\HomeController::class)->group(function ()
+Route::prefix('dashboard')->name('dashboard.')->controller(App\Http\Controllers\Admin\HomeController::class)->group(function ()
 {
     // Dashboard
-    Route::get('/home', 'index')->name('home');
+    Route::get('/', 'index')->name('show');
 });
 
-Route::controller(App\Http\Controllers\PersonalController::class)->group(function ()
+Route::prefix('personal')->name('info.')->controller(App\Http\Controllers\Admin\PersonalController::class)->group(function ()
 {
     // Update Persenol Info
-    Route::get('/edit', 'edit')->name('editInfo');
-    Route::post('/update', 'update')->name('updateInfo');
+    Route::get('/edit', 'edit')->name('edit');
+    Route::post('/update', 'update')->name('update');
 
     // Update Profile Image
-    Route::post('/updateProfileImage', 'updateProfileImage')->name('updateProfileImage');
+    Route::post('/updateProfileImage', 'updateProfileImage')->name('image');
 });
 
 
-Route::controller(App\Http\Controllers\SkillsController::class)->group(function ()
+Route::prefix('skills')->name('skills.')->controller(App\Http\Controllers\Admin\SkillsController::class)->group(function ()
 {
     // Show Skill
-    Route::get('/skills/show', 'index')->name('skills');
+    Route::get('/show', 'index')->name('show');
 
     // Add New Skill
-    Route::get('/skills/create', 'create')->name('createSkills');
-    Route::post('/skills/store', 'store')->name('storeSkills');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
 
     // Update Skill
-    Route::get('/skills/{id}/edit', 'edit')->name('editSkill');
-    Route::post('/skills/{id}/update', 'update')->name('updateSkills');
+    Route::get('/{id}/edit', 'edit')->name('edit');
+    Route::post('/{id}/update', 'update')->name('update');
 
     // Delete Skill
-    Route::get('/skills/{id}/delete', 'destroy')->name('deleteSkill');
+    Route::get('/{id}/delete', 'destroy')->name('delete');
 });
 
 
-Route::controller(App\Http\Controllers\ProjectController::class)->group(function ()
+Route::prefix('projects')->name('projects.')->controller(App\Http\Controllers\Admin\ProjectController::class)->group(function ()
 {
     // Show Projects
-    Route::get('/projects/show', 'index')->name('showProjects');
+    Route::get('show', 'index')->name('show');
 
     // Add New Project
-    Route::get('/projects/create', 'create')->name('createProject');
-    Route::post('/projects/store', 'store')->name('storeProject');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
 
     // Update Project
-    Route::get('/projects/{id}/edit', 'edit')->name('editProject');
-    Route::post('/projects/{id}/update', 'update')->name('updateProject');
+    Route::get('/{id}/edit', 'edit')->name('edit');
+    Route::post('/{id}/update', 'update')->name('update');
 
     // Delete Project
-    Route::get('/projects/{id}/delete', 'destroy')->name('deleteProject');
+    Route::get('/{id}/delete', 'destroy')->name('delete');
 });
 
-Route::controller(App\Http\Controllers\workcontroller::class)->group(function ()
+Route::prefix('works')->name('works.')->controller(App\Http\Controllers\Admin\workcontroller::class)->group(function ()
 {
     // Show Work Experiences
-    Route::get('/works/show', 'index')->name('showWorks');
+    Route::get('/show', 'index')->name('show');
 
     // Add New Work Experience
-    Route::get('/works/create', 'create')->name('createWork');
-    Route::post('/works/store', 'store')->name('storeWork');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
 
     // Update Work Experience
-    Route::get('/works/{id}/edit', 'edit')->name('editWork');
-    Route::post('/works/{id}/update', 'update')->name('updateWork');
+    Route::get('/{id}/edit', 'edit')->name('edit');
+    Route::post('/{id}/update', 'update')->name('update');
 
     // Delete Work Experience
-    Route::get('works/{id}/delete', 'destroy')->name('deleteWork');
+    Route::get('/{id}/delete', 'destroy')->name('delete');
 });
 
 
-Route::controller(App\Http\Controllers\LanguageController::class)->group(function ()
+Route::prefix('speaking-language')->name('langs.')->controller(App\Http\Controllers\Admin\LanguageController::class)->group(function ()
 {
     // Show Speaking Language
-    Route::get('/speaking-language/show', 'index')->name('showLangs');
+    Route::get('/show', 'index')->name('show');
 
     // Add New Speaking Language
-    Route::get('/speaking-language/create', 'create')->name('createLangs');
-    Route::post('/speaking-language/store', 'store')->name('storeLangs');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
 
     // Update Speaking Language
-    Route::get('/speaking-language/{id}/edit', 'edit')->name('editLangs');
-    Route::post('/speaking-language/{id}/update', 'update')->name('updateLangs');
+    Route::get('/{id}/edit', 'edit')->name('edit');
+    Route::post('/{id}/update', 'update')->name('update');
 
     // Delete Speaking Language
-    Route::get('speaking-language/{id}/delete', 'destroy')->name('deleteLangs');
+    Route::get('/{id}/delete', 'destroy')->name('delete');
 });

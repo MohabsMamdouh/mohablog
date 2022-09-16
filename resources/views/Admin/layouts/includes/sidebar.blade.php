@@ -2,39 +2,39 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <ul class="list-group list-group-flush">
         <li
-        @if (Route::currentRouteName() == 'editInfo')
+        @if (Route::currentRouteName() == 'info.edit')
             class="active"
         @endif
         >
-            <a href="{{ route('editInfo') }}">{{ __('Persenol Info Section') }}</a>
+            <a href="{{ route('info.edit') }}">{{ __('Persenol Info Section') }}</a>
         </li>
         <li
-        @if (Route::currentRouteName() == 'skills')
+        @if (Route::currentRouteName() == 'skills.show')
             class="active"
         @endif
         >
-            <a href="{{ route('skills') }}">{{ __('Skills Section') }}</a>
+            <a href="{{ route('skills.show') }}">{{ __('Skills Section') }}</a>
         </li>
         <li
         @if (Route::currentRouteName() == 'showProjects')
             class="active"
         @endif
         >
-            <a href="{{ route('showProjects') }}">{{ __('Projects Section') }}</a>
+            <a href="{{ route('projects.show') }}">{{ __('Projects Section') }}</a>
         </li>
         <li
         @if (Route::currentRouteName() == 'showWorks')
             class="active"
         @endif
         >
-            <a href="{{ route('showWorks') }}">{{ __('Work Expereince Section') }}</a>
+            <a href="{{ route('works.show') }}">{{ __('Work Expereince Section') }}</a>
         </li>
         <li
         @if (Route::currentRouteName() == 'showLangs')
             class="active"
         @endif
         >
-            <a href="{{ route('showLangs') }}">{{ __('Speaking Language Section') }}</a>
+            <a href="{{ route('langs.show') }}">{{ __('Speaking Language Section') }}</a>
         </li>
     </ul>
 </div>

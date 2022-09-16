@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col col-11 Center">
                 <h4 class="glitch text-capitalize" data-text="Speaking Language">
-                    <a href="{{ route('home') }}">{{ __('Admin') }} &#8827;</a> {{ __('Speaking Language') }}
+                    <a href="{{ route('dashboard.show') }}">{{ __('Admin') }} &#8827;</a> {{ __('Speaking Language') }}
                 </h4>
             </div>
         </div>
@@ -21,7 +21,7 @@
 <div class="buttons">
     <div class="row">
         <div class="col">
-            <a href="{{ route('createLangs') }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> {{ __('Add Speaking Language') }}</a>
+            <a href="{{ route('langs.create') }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> {{ __('Add Speaking Language') }}</a>
         </div>
     </div>
 </div>
@@ -54,7 +54,7 @@
                                     <div class="card-body" style="margin: 0;" role="alert">
                                         <h5 class="card-title" style="color: #888">{{ __('Update ') . $langs[$i]->languageName }}</h5>
                                         <p class="card-text">
-                                            <form action="{{ route('updateLangs', ['id' => $langs[$i]->id]) }}" method="post">
+                                            <form action="{{ route('langs.update', ['id' => $langs[$i]->id]) }}" method="post">
                                                 @csrf
                                                 <div class="row">
                                                     <div class="col">
@@ -119,7 +119,7 @@
             <div class="card-body text-danger">
                 <h5 class="card-title">{{ __('Delete the Language "') . $langs[$i]->languageName . '"?' }}</h5>
                 <p class="card-text">
-                    <a href="{{ route('deleteLangs', ['id' => $langs[$i]->id]) }}" class="card-link">{{ __('Delete') }}</a>
+                    <a href="{{ route('langs.delete', ['id' => $langs[$i]->id]) }}" class="card-link">{{ __('Delete') }}</a>
                     <a href="#" class="card-link cancel" onclick="closeForm{{ $i }}()">{{ __('Cancel') }}</a>
                 </p>
             </div>
