@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(App\Http\Controllers\Admin\HomeController::class)->group(function ()
 {
     // Dashboard
-    Route::get('/', 'index')->name('home');
+    Route::get('/home', 'index')->name('home');
 });
 
 Route::prefix('personal')->name('info.')->controller(App\Http\Controllers\Admin\PersonalController::class)->group(function ()
