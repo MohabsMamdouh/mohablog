@@ -1,5 +1,5 @@
 @php
-    $title = "personal Info"
+    $title = "Personal Info"
 @endphp
 
 @extends('Admin.layouts.page')
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col col-11 Center">
                 <h4 class="glitch text-capitalize" data-text="personal info">
-                    <a href="{{ route('home') }}">{{ __('Dashboard') }} &#8827;</a> {{ __('personal info') }}
+                    <a href="{{ route('home') }}">{{ __('Dashboard') }} &#8827;</a> <a href="{{ route('info.show') }}">{{ __('Personal Info') }} &#8827;</a> {{ __('edit personal info') }}
                 </h4>
             </div>
         </div>
@@ -31,7 +31,7 @@
 
                 <div class="row">
                     <div class="picture">
-                        <img src="{{ asset('storage/users/'.$user->profileImage) }}" alt="{{ $user->username }}">
+                        <img src="{{ 'storage/users/'.$user->profileImage }}" alt="{{ $user->username }}">
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
                 <div class="section-content profile-info">
                     <div class="row">
                         <div class="col-8 head info-head">
-                            <h5><i class="fa-solid fa-id-card"></i> <span>{{ __('User Profile') }}</span></h5>
+                            <h5><i class="fa-solid fa-id-card"></i> <span>{{ __('Edit User Profile') }}</span></h5>
                         </div>
                     </div>
                     <div class="row">

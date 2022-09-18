@@ -23,6 +23,7 @@ Route::controller(App\Http\Controllers\Admin\HomeController::class)->group(funct
 Route::prefix('personal')->name('info.')->controller(App\Http\Controllers\Admin\PersonalController::class)->group(function ()
 {
     // Update Persenol Info
+    Route::get('/show', 'show')->name('show');
     Route::get('/edit', 'edit')->name('edit');
     Route::post('/update', 'update')->name('update');
 
