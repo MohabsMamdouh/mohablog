@@ -56,6 +56,17 @@ class UserHomeController extends BaseController
         return view('pdf', compact('projects', 'skills', 'sLanguages', 'user', 'works'));
     }
 
+    public function pdfview2()
+    {
+        $projects = Projects::orderBy('endDate', 'DESC')->get();
+        $skills = Skill::all();
+        $sLanguages = SpeakingLanguage::all();
+        $user = User::first();
+        $works = WorkExp::all();
+
+        return view('pdf2', compact('projects', 'skills', 'sLanguages', 'user', 'works'));
+    }
+
     /**
      * It takes the data from the database and passes it to the view, then it loads the view and
      * downloads it as a pdf

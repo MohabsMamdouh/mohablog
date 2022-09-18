@@ -66,7 +66,7 @@
         }
 
         .contact-info {
-            margin-bottom: 20px;
+            margin-bottom: 7px;
         }
 
         .email ,
@@ -95,7 +95,7 @@
         }
         .section {
             margin-bottom: 15px;
-            margin-top: 50px;
+            margin-top: 20px;
         }
 
         .section:last-of-type {
@@ -171,7 +171,6 @@
 
         .unbreakable {
             page-break-inside: always !important;
-            margin-top: 50px;
         }
 
         .row {
@@ -225,13 +224,15 @@
                 </div>
                 <div class="contact-info">
                     <span class="email">Linked In: </span>
-                    <span class="email-val"><a href="{{ $user->linked_in }}"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a></span>
-                    <span class="separator"></span>
+                    <span class="email-val"><a href="{{ $user->linked_in }}">{{ $user->linked_in }}</a></span>
+                </div>
+                <div class="contact-info">
                     <span class="phone">Github: </span>
-                    <span class="phone-val"><a href="{{ $user->github }}"><img src="https://img.shields.io/badge/Github-0077B5?style=for-the-badge&logo=github&logoColor=white&color=black"/></a></span>
-                    <span class="separator"></span>
+                    <span class="phone-val"><a href="{{ $user->github }}">{{ $user->github }}</a></span>
+                </div>
+                <div class="contact-info">
                     <span class="phone">Website: </span>
-                    <span class="phone-val"><a href="{{ $user->my_site }}"><img src="https://img.shields.io/badge/mySite-red?style=for-the-badge&logo=appveyor&logoColor=white"/></a></span>
+                    <span class="phone-val"><a href="{{ $user->my_site }}">{{ $user->my_site }}</a></span>
                 </div>
                 <div class="about">
                     <span class="position">{{ $user->title }}</span>
@@ -272,7 +273,8 @@
                     <div class="section__list">
                         @foreach ($projects as $p)
                             <div class="section__list-item">
-                                <div class="name"><a href="{{ $p->appURL ? $p->appURL : $p->url }}">{{ $p->name }} </a></div>
+                                <div class="name">{{ $p->name }}</div>
+                                <div class="text"><a href="{{ $p->appURL ? $p->appURL : $p->url }}">{{ $p->appURL ? $p->appURL : $p->url }}</a></div>
                                 <div class="text">{{ $p->caption }}</div>
                             </div>
                         @endforeach
