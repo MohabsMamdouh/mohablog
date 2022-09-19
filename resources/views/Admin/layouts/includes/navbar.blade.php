@@ -16,7 +16,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <img src="{{ asset('storage/users/'.$user->profileImage) }}" alt="MOHAB" style="width: 40px;height: 40px;border-radius: 100%" >
+                            <img src="{{ URL('storage/users/'. $user->profileImage) }}" alt="MOHAB" style="width: 40px;height: 40px;border-radius: 100%" >
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

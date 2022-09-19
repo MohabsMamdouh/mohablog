@@ -31,7 +31,7 @@
 
                 <div class="row">
                     <div class="picture">
-                        <img src="{{ asset('storage/users/'.$user->profileImage) }}" alt="{{ $user->username }}">
+                        <img src="{{ URL('storage/users/'. $user->profileImage) }}" alt="{{ $user->username }}">
                     </div>
                 </div>
 

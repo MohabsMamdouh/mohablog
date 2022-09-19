@@ -36,7 +36,7 @@
     <div class="container">
         <div class="row">
             <div class="box">
-                <a href="{{ route('info.edit') }}" class="col-xl-3 text-bold text-uppercase" style="min-width: 30%"><h5>{{ __('personal Info') }}</h5></a>
+                <a href="{{ route('info.show') }}" class="col-xl-3 text-bold text-uppercase" style="min-width: 30%"><h5>{{ __('personal Info') }}</h5></a>
             </div>
             <div class="box">
                 <a href="{{ route('skills.show') }}" class="col-xl-3 text-bold text-uppercase" style="min-width: 30%"><h5>{{ __('Skills') }}</h5></a>

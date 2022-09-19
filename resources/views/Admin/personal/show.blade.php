@@ -65,7 +65,7 @@
         <div class="card">
             <div class="row">
                 <div class="col-xl-4">
-                    <img src="{{ asset('storage/users/'.$user->profileImage) }}" alt="{{ $user->username }}">
+                    <img src="{{ URL('storage/users/'. $user->profileImage) }}" alt="{{ $user->username }}">
                 </div>
                 <div class="col-xl-8">
                     <div class="row">
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-xl-3"><b>Email: </b></div>
+                        <div class="col-xl-3"<b>Email: </b></div>
                         <div class="col-xl-9">{{ $user->email }}</div>
                     </div>
 
