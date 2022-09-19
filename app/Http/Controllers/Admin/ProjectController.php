@@ -55,7 +55,7 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return redirect(route('showProjects'));
+        return redirect(route('projects.show'));
     }
 
     /**
@@ -111,7 +111,7 @@ class ProjectController extends Controller
 
         $p->save();
 
-        return redirect(route('showProjects'));
+        return redirect(route('projects.show'));
     }
 
     /**
@@ -123,6 +123,6 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         $project = Projects::where('id', $id)->delete();
-        return redirect(route('showProjects'));
+        return redirect(route('projects.show'));
     }
 }

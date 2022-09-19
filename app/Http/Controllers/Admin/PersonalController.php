@@ -100,7 +100,7 @@ class PersonalController extends Controller
 
         $user->save();
 
-        return \redirect()->back();
+        return redirect(route('info.show'));
     }
 
     public function updateProfileImage(Request $request)
@@ -121,7 +121,7 @@ class PersonalController extends Controller
 
         $user->save();
 
-        return \redirect()->back();
+        return redirect(route('info.show'));
     }
 
     /**

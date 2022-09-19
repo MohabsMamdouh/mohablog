@@ -15,12 +15,19 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
+
 Route::prefix('user')->controller(App\Http\Controllers\User\UserHomeController::class)->group(function ()
 {
     Route::get('/portfolio', 'index')->name('portfolio');
     Route::get('/downloadPDF','downloadPDF')->name('downloadPDF');
     Route::get('/PDF/view/','pdfview')->name('viewPDF');
     Route::get('/PDF/view2/','pdfview2')->name('viewPDF2');
+});
+
+Route::get('/', function ()
+{
+    return redirect(route('portfolio'));
 });
 
 Auth::routes();

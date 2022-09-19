@@ -48,7 +48,7 @@ class LanguageController extends Controller
 
         $sLanguage->save();
 
-        return redirect(route('showLangs'));
+        return redirect(route('langs.show'));
     }
 
     /**
@@ -94,7 +94,7 @@ class LanguageController extends Controller
 
         $sLanguage->save();
 
-        return redirect(route('showLangs'));
+        return redirect(route('langs.show'));
     }
 
     /**
@@ -106,6 +106,6 @@ class LanguageController extends Controller
     public function destroy($id)
     {
         $lang = SpeakingLanguage::where('id', $id)->delete();
-        return redirect(route('showLangs'));
+        return redirect(route('langs.show'));
     }
 }

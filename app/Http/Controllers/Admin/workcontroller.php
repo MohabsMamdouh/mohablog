@@ -60,7 +60,7 @@ class workcontroller extends Controller
 
         $exp->save();
 
-        return redirect(route('showWorks'));
+        return redirect(route('works.show'));
     }
 
     /**
@@ -121,7 +121,7 @@ class workcontroller extends Controller
 
         $exp->save();
 
-        return redirect(route('showWorks'));
+        return redirect(route('works.show'));
     }
 
     /**
@@ -133,6 +133,6 @@ class workcontroller extends Controller
     public function destroy($id)
     {
         $work = WorkExp::where('id', $id)->delete();
-        return redirect(route('showWorks'));
+        return redirect(route('works.show'));
     }
 }

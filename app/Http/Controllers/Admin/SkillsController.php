@@ -55,7 +55,7 @@ class SkillsController extends Controller
         }
         $skill->save();
 
-        return redirect(route('skills'));
+        return redirect(route('skills.show'));
     }
 
     /**
@@ -108,7 +108,7 @@ class SkillsController extends Controller
 
         $skill->save();
 
-        return redirect(route('skills'));
+        return redirect(route('skills.show'));
     }
 
     /**
@@ -120,6 +120,6 @@ class SkillsController extends Controller
     public function destroy($id)
     {
         $skill = Skill::where('id', $id)->delete();
-        return redirect(route('skills'));
+        return redirect(route('skills.show'));
     }
 }
