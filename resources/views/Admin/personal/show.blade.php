@@ -22,100 +22,101 @@
 
 <style>
     .card {
-        margin: 2rem 1rem 2rem 1rem;
-        border: none;
-        border-radius: 0px;
-        box-shadow: -2px 1px 8px 1px lightgrey;
+        width: 80%;
+        margin: auto;
+        height: auto;
+        display: flex;
+        background-color: #fff;
+        border: 1px solid rgba(59, 58, 58, 0.46);
+        border-radius: 20px;
+        box-shadow: -10px 5px 10px gray;
+        position: relative;
+        top: 0;
+        transition: top ease 0.5s;
+        cursor: pointer;
+        padding: 10px
     }
 
-    .portfolio-card__image {
-        max-height: 13rem;
+    .card:hover {
+        top: -50px;
     }
 
-    .portfolio-card__title {
-        font-family: 'Barlow Condensed', sans-serif;
-        font-size: 2rem;
-        text-transform: uppercase;
+    .card img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
     }
 
-    .portfolio-card__category {
-        font-family: 'Barlow Condensed', sans-serif;
-        font-size: 1rem;
-        text-transform: uppercase;
-    }
-
-    .portfolio-card__category__offices {
-        color: red;
-    }
-
-    .portfolio-card__category__industrial {
-        color: blue;
-    }
-
-    .portfolio-card__category__retail {
-        color: green;
-    }
-
-    .portfolio-card__text {
-        font-family: 'Abel', sans-serif;
-        font-size: 1rem;
-    }
-
-    .portfolio-card__stage {
-        color: white;
-        text-transform: uppercase;
-        padding: 6px;
-        font-family: 'Barlow Condensed', sans-serif;
-    }
-
-    .portfolio-card__stage__icon {
-        margin-right: 5px;
-    }
-
-    .portfolio-card__stage__complete {
-        background-color: green;
-    }
-
-    .portfolio-card__stage__construction {
-        background-color: red;
-    }
-
-    .portfolio-card__stage__planning {
-        background-color: lightblue;
-    }
-
-    .portfolio-card__link {
-        font-family: 'Barlow Condensed', sans-serif;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        color: grey;
-        text-decoration: underline;
-        transition: 0.3s;
-    }
-
-    .portfolio-card__link:hover {
-        color: black;
+    .card .row .col-xl-8 .row {
+        margin-bottom: 5px
     }
 </style>
 
+<div class="buttons">
+    <div class="row">
+        <div class="col">
+            <a href="{{ route('info.edit') }}" class="btn btn-success"><i class="fa-solid fa-edit"></i> {{ __('Edit Info') }}</a>
+        </div>
+    </div>
+</div>
+
 <section class="content">
     <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card">
-              <img class="card-img-top portfolio-card__image" src="{{ asset('storage/users/'.$user->profileImage) }}" alt="Card image cap">
-              <div class="card-body">
-                <h6 class="card-subtitle mb-2 portfolio-card__category portfolio-card__category__offices">{{ $user->currentPosition }}</h6>
-                <h4 class="card-title mb-2 portfolio-card__title">{{ $user->fullName }}</h4>
-                <p class="card-text portfolio-card__text">{{ $user->profile }}</p>
-                <p><span class="portfolio-card__stage portfolio-card__stage__construction"><i class="fas fa-hammer portfolio-card__stage__icon"></i>Construction</span></p>
-                  <a href="#" class="card-link portfolio-card__link">Learn More</a>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="card">
+            <div class="row">
+                <div class="col-xl-4">
+                    <img src="{{ asset('storage/users/'.$user->profileImage) }}" alt="{{ $user->username }}">
+                </div>
+                <div class="col-xl-8">
+                    <div class="row">
+                        <div class="row"><h2>{{ $user->fullName }}</h2></div>
+                        <div class="row"><h5>{{ $user->title }}</h5></div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-xl-3"><b>Email: </b></div>
+                        <div class="col-xl-9">{{ $user->email }}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3"><b>Phone: </b></div>
+                        <div class="col-xl-9">{{ $user->phone }}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3"><b>Address: </b></div>
+                        <div class="col-xl-9">{{ $user->address }}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3"><b>No. Exp. Years: </b></div>
+                        <div class="col-xl-9">{{ $user->expYear }}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3"><b>LINKED-IN: </b></div>
+                        <div class="col-xl-9"><a href="{{ $user->linked_in }}">{{ $user->linked_in }}</a></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3"><b>GITHUB: </b></div>
+                        <div class="col-xl-9"><a href="{{ $user->github }}">{{ $user->github }}</a></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3"><b>MY SITE: </b></div>
+                        <div class="col-xl-9"><a href="{{ $user->my_site }}">{{ $user->my_site }}</a></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3"><b>Profile: </b></div>
+                        <div class="col-xl-9">
+                            {{ $user->profile }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
 </section>
 
