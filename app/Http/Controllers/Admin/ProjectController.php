@@ -106,8 +106,7 @@ class ProjectController extends Controller
         $p->caption = $request['caption'];
         $p->techmologyStack = $request['TechnologyStack'];
         $p->endDate = $request['endDate'];
-
-        $project->appURL = ($request['appURL'] != "") ? $request['appURL'] : $request['URL'] ;
+        $p->appURL = $request['appURL'];
 
         $p->save();
 
