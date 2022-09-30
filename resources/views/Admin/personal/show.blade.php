@@ -99,6 +99,11 @@
                     </div>
 
                     <div class="row">
+                        <div class="col-xl-3"><b>Behance: </b></div>
+                        <div class="col-xl-9"><a href="{{ $user->behance }}">{{ $user->behance }}</a></div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-xl-3"><b>GITHUB: </b></div>
                         <div class="col-xl-9"><a href="{{ $user->github }}">{{ $user->github }}</a></div>
                     </div>

@@ -81,6 +81,7 @@ class PersonalController extends Controller
             'ExpYear' => 'required',
             'profile' => 'required',
             'linked_in' => 'required',
+            'behance' => 'required',
             'github' => 'required',
             'my_site' => 'required',
         ]);
@@ -95,6 +96,7 @@ class PersonalController extends Controller
         $user->expYear = $request['ExpYear'];
         $user->profile = $request['profile'];
         $user->linked_in = $request['linked_in'];
+        $user->behance = $request['behance'];
         $user->github = $request['github'];
         $user->my_site = $request['my_site'];
 

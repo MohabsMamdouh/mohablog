@@ -231,6 +231,10 @@
                     <span class="phone-val"><a href="{{ $user->github }}">{{ $user->github }}</a></span>
                 </div>
                 <div class="contact-info">
+                    <span class="phone">Behance: </span>
+                    <span class="phone-val"><a href="{{ $user->behance }}">{{ $user->behance }}</a></span>
+                </div>
+                <div class="contact-info">
                     <span class="phone">Website: </span>
                     <span class="phone-val"><a href="{{ $user->my_site }}">{{ $user->my_site }}</a></span>
                 </div>

@@ -115,11 +115,18 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row">
-                                    <div class="col-xl-12">
+                                    <div class="col-xl-6">
                                         <div class="input-group">
                                             <input type="text" name="my_site" id="mySite" class="form-control" value="{{ $user->my_site }}">
                                             <label for="mySite">{{ __('mySite') }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="input-group">
+                                            <input type="text" name="behance" id="behance" class="form-control" value="{{ $user->behance }}">
+                                            <label for="behance">{{ __('Behance') }}</label>
                                         </div>
                                     </div>
                                 </div>
