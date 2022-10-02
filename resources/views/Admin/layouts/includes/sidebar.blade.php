@@ -2,11 +2,11 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <ul class="list-group list-group-flush">
         <li
-        @if (Route::currentRouteName() == 'info.edit')
+        @if (Route::currentRouteName() == 'info.show')
             class="active"
         @endif
         >
-            <a href="{{ route('info.edit') }}">{{ __('Persenol Info Section') }}</a>
+            <a href="{{ route('info.show') }}">{{ __('Persenol Info Section') }}</a>
         </li>
         <li
         @if (Route::currentRouteName() == 'skills.show')
