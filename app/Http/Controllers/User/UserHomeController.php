@@ -30,7 +30,7 @@ class UserHomeController extends BaseController
         $skills = Skill::all();
         $sLanguages = SpeakingLanguage::all();
         $user = User::first();
-        $works = WorkExp::all();
+        $works = WorkExp::orderBy('startDate', 'DESC')->get();
         return view('index',[
             'projects' => $projects,
             'skills' => $skills,

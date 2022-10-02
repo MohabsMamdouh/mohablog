@@ -32,8 +32,8 @@ class User extends Seeder
                 'phone' => '01156047032',
                 'github' => 'https://github.com/MohabsMamdouh',
                 'linked_in' => 'https://linkedin.com/in/mohab-mamdouh-9307a57b/',
-                'my_site' => 'https://mohablog.herokuapp.com/'
-
+                'my_site' => 'https://mohablog.herokuapp.com/',
+                'behance' => 'https://www.behance.net/mohabmamdouh22'
             )
         );
     }
