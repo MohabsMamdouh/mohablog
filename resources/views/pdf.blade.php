@@ -238,7 +238,8 @@
                     <span class="phone">Website: </span>
                     <span class="phone-val"><a href="{{ $user->my_site }}">{{ $user->my_site }}</a></span>
                 </div>
-                <div class="about">
+                {{-- <div style="height: 100px"></div> --}}
+                <div class="about" style="">
                     <span class="position">{{ $user->title }}</span>
                     <span class="desc">
                         @php
@@ -272,26 +273,6 @@
                     </div>
                 </div>
 
-                <div class="section unbreakable">
-                    <div class="section__title">{{ __('Projects') }}</div>
-                    <div class="section__list">
-                        @foreach ($projects as $p)
-                            <div class="section__list-item">
-                                <div class="name">{{ $p->name }}</div>
-                                <div class="text"><a href="{{ $p->appURL ? $p->appURL : $p->url }}">{{ $p->appURL ? $p->appURL : $p->url }}</a></div>
-                                <div class="text">{{ $p->caption }}</div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="details">
-
                 <div class="section unbreakable" id="skill">
                     <div class="section__title">{{ __ ('Skills') }}</div>
                     <div class="skills">
@@ -323,6 +304,28 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="details">
+
+                <div class="section unbreakable">
+                    <div class="section__title">{{ __('Projects') }}</div>
+                    <div class="section__list">
+                        @foreach ($projects as $p)
+                            <div class="section__list-item">
+                                <div class="name">{{ $p->name }}</div>
+                                <div class="text"><a href="{{ $p->appURL ? $p->appURL : $p->url }}">{{ $p->appURL ? $p->appURL : $p->url }}</a></div>
+                                <div class="text">{{ $p->caption }}</div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+
 
                 <div class="section unbreakable">
                     <div class="section__title">

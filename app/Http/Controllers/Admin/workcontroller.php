@@ -93,7 +93,7 @@ class workcontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, WorkExp $id)
     {
         $request->validate([
             'companyName' => 'required',
@@ -104,22 +104,22 @@ class workcontroller extends Controller
         ]);
 
         // $exp = new WorkExp();
-        $exp = WorkExp::where('id', $id)->first();
-        $exp->companyName = $request['companyName'];
-        $exp->title = $request['title'];
-        $exp->caption = $request['caption'];
-        $exp->environment = $request['environment'];
-        $exp->startDate = $request['startDate'];
+        // $exp = WorkExp::where('id', $id)->first();
+        $id->companyName = $request['companyName'];
+        $id->title = $request['title'];
+        $id->caption = $request['caption'];
+        $id->environment = $request['environment'];
+        $id->startDate = $request['startDate'];
 
         if ($request['Present'] != null) {
-            $exp->current = $request['Present'];
-            $exp->endDate = null;
+            $id->current = $request['Present'];
+            $id->endDate = null;
         } else {
-            $exp->endDate = $request['endDate'];
-            $exp->current = null;
+            $id->endDate = $request['endDate'];
+            $id->current = null;
         }
 
-        $exp->save();
+        $id->save();
 
         return redirect(route('works.show'));
     }

@@ -88,25 +88,25 @@ class SkillsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Skill $id)
     {
         $request->validate([
             'languageName' => 'required',
             'type' => 'in:' . implode(',', $this->types),
         ]);
 
-        $skill = Skill::where('id', $id)->first();
-        $skill->languageName = $request['languageName'];
+        // $skill = Skill::where('id', $id)->first();
+        $id->languageName = $request['languageName'];
 
-        $skill->type = $request['type'];
+        $id->type = $request['type'];
 
         if ($request['main'] != null) {
-            $skill->main = $request['main'];
+            $id->main = $request['main'];
         } else {
-            $skill->main = "null";
+            $id->main = "null";
         }
 
-        $skill->save();
+        $id->save();
 
         return redirect(route('skills.show'));
     }

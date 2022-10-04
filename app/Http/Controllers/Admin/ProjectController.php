@@ -88,7 +88,7 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Projects $id)
     {
         $request->validate([
             'projectName' => 'required',
@@ -97,18 +97,14 @@ class ProjectController extends Controller
             'endDate' => 'required',
         ]);
 
-        // dd($request['projectName']);
+        $id->name = $request['projectName'];
+        $id->url = $request['URL'];
+        $id->caption = $request['caption'];
+        $id->techmologyStack = $request['TechnologyStack'];
+        $id->endDate = $request['endDate'];
+        $id->appURL = $request['appURL'];
 
-        $p = Projects::where('id', $id)->first();
-
-        $p->name = $request['projectName'];
-        $p->url = $request['URL'];
-        $p->caption = $request['caption'];
-        $p->techmologyStack = $request['TechnologyStack'];
-        $p->endDate = $request['endDate'];
-        $p->appURL = $request['appURL'];
-
-        $p->save();
+        $id->save();
 
         return redirect(route('projects.show'));
     }

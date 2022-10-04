@@ -81,18 +81,18 @@ class LanguageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, SpeakingLanguage $id)
     {
         $request->validate([
             'languageName' => 'required',
             'level' => 'required',
         ]);
 
-        $sLanguage = SpeakingLanguage::where('id', $id)->first();
-        $sLanguage->languageName = $request['languageName'];
-        $sLanguage->level = $request['level'];
+        // $sLanguage = SpeakingLanguage::where('id', $id)->first();
+        $id->languageName = $request['languageName'];
+        $id->level = $request['level'];
 
-        $sLanguage->save();
+        $id->save();
 
         return redirect(route('langs.show'));
     }

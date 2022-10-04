@@ -1,0 +1,36 @@
+GET http://127.0.0.1:8000/api/work-exp HTTP/1.1
+
+
+####
+
+GET http://127.0.0.1:8000/api/users/show HTTP/1.1
+
+
+###
+
+
+PUT http://127.0.0.1:8000/api/update/1
+
+Content-Type: application/json
+
+{
+    "fullName": "Mohab Mamdouh U",
+    "username": "mohablog U",
+}
+
+
+###
+
+GET http://127.0.0.1:8000/api/speaking-languages HTTP/1.1
+
+
+###
+
+PUT http://127.0.0.1:8000/api/speaking-languages/update/2
+
+Content-Type: application/json
+
+{
+    "languageName": "ar",
+    "level": "Level 0"
+}
