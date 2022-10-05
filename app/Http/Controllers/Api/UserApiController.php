@@ -19,27 +19,20 @@ class UserApiController extends BaseController
     public function update(User $user)
     {
         request()->validate([
-            'FullName' => 'required',
-            'Username' => 'required',
+            'fullName' => 'required',
+            'username' => 'required',
         ]);
 
+        // $user->fullName = request('fullName');
+        // $user->username = request('username');
+
         $success = $user->update([
-            'fullName' => request('FullName'),
-            'username' => request('Username'),
-            'title' => request('Title'),
-            'email' => request('Email'),
-            'address' => request('Address'),
-            'phone' => request('Phone'),
-            'profile' => request('profile'),
-            'expYear' => request('ExpYear'),
-            'github' => request('github'),
-            'linked_in' => request('linked_in'),
-            'my_site' => request('my_site'),
-            'behance' => request('behance')
+            'fullName' => request('fullName'),
+            'username' => request('username')
         ]);
 
         return [
-            'success' => $success
+            "success" => $success
         ];
     }
 }

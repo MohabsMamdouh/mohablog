@@ -3,14 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Models\SiteDetail;
-use App\Models\User;
-use App\Models\FeedBack;
-use App\Models\Projects;
-use App\Models\skill;
-use App\Models\WorkExp;
-use App\Models\SpeakingLanguage;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,71 +18,75 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('users')->controller(App\Http\Controllers\Api\UserApiController::class)->group(function ()
+Route::namespace('App\Http\Controllers\Api')->group(function ()
 {
-    Route::get('/show', 'showAll');
-    // Route::put('/update/{user}', 'update');
-});
+    Route::prefix('users')->controller(UserApiController::class)->group(function ()
+    {
+        Route::get('show-all', 'showAll');
+        Route::put('update/{user}', 'update');
+    });
 
-Route::put('/update/{user}', function (User $user)
-{
-    request()->validate([
-        'fullName' => 'required',
-        'username' => 'required',
-    ]);
+    Route::prefix('speaking-languages')->controller(SpeakingLanguageApiController::class)->group(function ()
+    {
+        Route::get('show-all ', 'showAll');
 
-    // $user->fullName = request('fullName');
-    // $user->username = request('username');
+        Route::post('create', 'create');
 
-    $success = $user->update([
-        'fullName' => request('fullName'),
-        'username' => request('username')
-    ]);
+        Route::put('update/{lang}', 'update');
 
-    return [
-        "success" => $success
-    ];
-});
+        Route::put('delete/{lang}', 'delete');
+    });
 
 
-Route::get('/feedbacks', function ()
-{
-    return FeedBack::all();
-});
+    Route::prefix('skills')->controller(SkillsApiController::class)->group(function ()
+    {
+        Route::get('show-all', 'showAll');
 
-Route::get('/projects', function ()
-{
-    return Projects::all();
-});
+        Route::get('show/{skill}', 'show');
 
-Route::get('/skills', function ()
-{
-    return skill::all();
-});
+        Route::post('create', 'create');
 
-Route::get('/work-exp', function ()
-{
-    return WorkExp::all();
-});
+        Route::put('update/{skill}', 'update');
 
-Route::get('/speaking-languages', function ()
-{
-    return SpeakingLanguage::all();
-});
+        Route::put('delete/{skill}', 'delete');
+    });
 
-Route::put('/speaking-languages/update/{lang}', function (SpeakingLanguage $lang)
-{
-    request()->validate([
-        'languageName' => 'required',
-        'level' => 'required',
-    ]);
+    Route::prefix('projects')->controller(ProjectsApiController::class)->group(function ()
+    {
+        Route::get('show-all', 'showAll');
 
-    $success = $user->update([
-        'languageName' => request('languageName'),
-        'level' => request('level')
-    ]);
+        Route::get('show/{project}', 'show');
 
-    return [
-        "success" => $success
-    ];
+        Route::post('create', 'create');
+
+        Route::put('update/{project}', 'update');
+
+        Route::put('delete/{project}', 'delete');
+    });
+
+    Route::prefix('work-exps')->controller(WorkExpsApiController::class)->group(function ()
+    {
+        Route::get('show-all', 'showAll');
+
+        Route::get('show/{work}', 'show');
+
+        Route::post('create', 'create');
+
+        Route::put('update/{work}', 'update');
+
+        Route::put('delete/{work}', 'delete');
+    });
+
+    Route::prefix('feedbacks')->controller(FeedbackApiController::class)->group(function ()
+    {
+        Route::get('show-all', 'showAll');
+
+        Route::get('show/{feed}', 'show');
+
+        Route::post('create', 'create');
+
+        Route::put('update/{feed}', 'update');
+
+        Route::put('delete/{feed}', 'delete');
+    });
 });
