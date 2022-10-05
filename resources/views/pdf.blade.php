@@ -183,7 +183,14 @@
         .col {
             width: 45%;
             padding: 5px;
-            margin-bottom: 10px
+            margin-bottom: 10px;
+            text-align: center;
+            flex: auto;
+        }
+
+        .col ul {
+            margin-left: 50px;
+            text-align: left;
         }
 
         .row .col:first-child {
