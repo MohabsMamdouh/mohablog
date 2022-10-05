@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as BaseController;
 
 use App\Models\FeedBack;
 
-class FeedbackApiController extends Controller
+class FeedbackApiController extends BaseController
 {
     public function showAll()
     {

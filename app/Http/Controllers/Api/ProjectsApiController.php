@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as BaseController;
+
 
 use App\Models\Projects;
 
-class ProjectsApiController extends Controller
+class ProjectsApiController extends BaseController
 {
     public function showAll()
     {

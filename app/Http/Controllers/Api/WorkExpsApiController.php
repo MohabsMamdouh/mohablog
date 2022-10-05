@@ -4,14 +4,16 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as BaseController;
+
 
 use App\Models\WorkExp;
 
-class WorkExpsApiController extends Controller
+class WorkExpsApiController extends BaseController
 {
     public function showAll()
     {
-        return Projects::all();
+        return WorkExp::all();
     }
 
     public function show(WorkExp $work)

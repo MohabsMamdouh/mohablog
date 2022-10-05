@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 
+// Models
 use App\Models\Projects;
 use App\Models\Skill;
 use App\Models\SpeakingLanguage;
@@ -10,9 +11,10 @@ use App\Models\User;
 use App\Models\WorkExp;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Barryvdh\DomPDF\PDF as DomPDFPDF;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class UserHomeController extends BaseController

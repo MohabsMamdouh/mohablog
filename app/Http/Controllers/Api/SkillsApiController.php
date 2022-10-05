@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as BaseController;
 
-use App\Models\Skills;
 
-class SkillsApiController extends Controller
+use App\Models\Skill;
+
+class SkillsApiController extends BaseController
 {
     public function showAll()
     {

@@ -34,7 +34,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function ()
 
         Route::put('update/{lang}', 'update');
 
-        Route::put('delete/{lang}', 'delete');
+        Route::delete('delete/{lang}', 'delete');
     });
 
 
@@ -48,7 +48,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function ()
 
         Route::put('update/{skill}', 'update');
 
-        Route::put('delete/{skill}', 'delete');
+        Route::delete('delete/{skill}', 'delete');
     });
 
     Route::prefix('projects')->controller(ProjectsApiController::class)->group(function ()
@@ -61,7 +61,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function ()
 
         Route::put('update/{project}', 'update');
 
-        Route::put('delete/{project}', 'delete');
+        Route::delete('delete/{project}', 'delete');
     });
 
     Route::prefix('work-exps')->controller(WorkExpsApiController::class)->group(function ()
@@ -74,7 +74,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function ()
 
         Route::put('update/{work}', 'update');
 
-        Route::put('delete/{work}', 'delete');
+        Route::delete('delete/{work}', 'delete');
     });
 
     Route::prefix('feedbacks')->controller(FeedbackApiController::class)->group(function ()
@@ -87,6 +87,6 @@ Route::namespace('App\Http\Controllers\Api')->group(function ()
 
         Route::put('update/{feed}', 'update');
 
-        Route::put('delete/{feed}', 'delete');
+        Route::delete('delete/{feed}', 'delete');
     });
 });
