@@ -18,75 +18,75 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::namespace('App\Http\Controllers\Api')->group(function ()
+
+Route::prefix('users')->controller(UserApiController::class)->group(function ()
 {
-    Route::prefix('users')->controller(UserApiController::class)->group(function ()
-    {
-        Route::get('show-all', 'showAll');
-        Route::put('update/{user}', 'update');
-    });
+    Route::get('show-all', 'showAll');
+    Route::put('update/{user}', 'update');
+});
 
-    Route::prefix('speaking-languages')->controller(SpeakingLanguageApiController::class)->group(function ()
-    {
-        Route::get('show-all ', 'showAll');
+Route::prefix('speaking-languages')->controller(SpeakingLanguageApiController::class)->group(function ()
+{
+    Route::get('show-all ', 'showAll');
 
-        Route::post('create', 'create');
+    Route::post('create', 'create');
 
-        Route::put('update/{lang}', 'update');
+    Route::put('update/{lang}', 'update');
 
-        Route::delete('delete/{lang}', 'delete');
-    });
+    Route::delete('delete/{lang}', 'delete');
+});
 
 
-    Route::prefix('skills')->controller(SkillsApiController::class)->group(function ()
-    {
-        Route::get('show-all', 'showAll');
+Route::prefix('skills')->controller(SkillsApiController::class)->group(function ()
+{
+    // Show Endpoint
+    Route::get('show-all', 'showAll');
 
-        Route::get('show/{skill}', 'show');
+    Route::get('show/{skill}', 'show');
 
-        Route::post('create', 'create');
+    // Create Endpoint
+    Route::post('create', 'create');
 
-        Route::put('update/{skill}', 'update');
+    Route::put('update/{skill}', 'update');
 
-        Route::delete('delete/{skill}', 'delete');
-    });
+    Route::delete('delete/{skill}', 'delete');
+});
 
-    Route::prefix('projects')->controller(ProjectsApiController::class)->group(function ()
-    {
-        Route::get('show-all', 'showAll');
+Route::prefix('projects')->controller(ProjectsApiController::class)->group(function ()
+{
+    Route::get('show-all', 'showAll');
 
-        Route::get('show/{project}', 'show');
+    Route::get('show/{project}', 'show');
 
-        Route::post('create', 'create');
+    Route::post('create', 'create');
 
-        Route::put('update/{project}', 'update');
+    Route::put('update/{project}', 'update');
 
-        Route::delete('delete/{project}', 'delete');
-    });
+    Route::delete('delete/{project}', 'delete');
+});
 
-    Route::prefix('work-exps')->controller(WorkExpsApiController::class)->group(function ()
-    {
-        Route::get('show-all', 'showAll');
+Route::prefix('work-exps')->controller(WorkExpsApiController::class)->group(function ()
+{
+    Route::get('show-all', 'showAll');
 
-        Route::get('show/{work}', 'show');
+    Route::get('show/{work}', 'show');
 
-        Route::post('create', 'create');
+    Route::post('create', 'create');
 
-        Route::put('update/{work}', 'update');
+    Route::put('update/{work}', 'update');
 
-        Route::delete('delete/{work}', 'delete');
-    });
+    Route::delete('delete/{work}', 'delete');
+});
 
-    Route::prefix('feedbacks')->controller(FeedbackApiController::class)->group(function ()
-    {
-        Route::get('show-all', 'showAll');
+Route::prefix('feedbacks')->controller(FeedbackApiController::class)->group(function ()
+{
+    Route::get('show-all', 'showAll');
 
-        Route::get('show/{feed}', 'show');
+    Route::get('show/{feed}', 'show');
 
-        Route::post('create', 'create');
+    Route::post('create', 'create');
 
-        Route::put('update/{feed}', 'update');
+    Route::put('update/{feed}', 'update');
 
-        Route::delete('delete/{feed}', 'delete');
-    });
+    Route::delete('delete/{feed}', 'delete');
 });
