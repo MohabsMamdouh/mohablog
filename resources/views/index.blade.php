@@ -60,30 +60,56 @@
                     @php
                         $types = ['Backend', 'Fontend', 'Database', 'Prior Knowledge', 'Little Knowledge',  'Other Skills']
                     @endphp
-
                     <div class="row flex">
+
+
                         @for ($i = 0; $i < count($types); $i++)
                             @if (($i + 1) % 2 != 0)
                                 </div><div class="row flex">
                             @endif
                             <div class="col-sm-6">
-                                <h5 class="text-capitalize"><strong>{{ $types[$i] }}</strong></h5>
-                                <ul>
-                                    @for ($x = 0; $x < count($skills); $x++)
-                                        @if ($skills[$x]->type == $types[$i])
+                                @php
+                                    $t = str_replace(" ", "_", $types[$i]);
+                                @endphp
+                                <h5 class="text-capitalize"><strong>{{ $t }}</strong></h5>
+                                @php
+                                    $count = 0;
+                                @endphp
+
+
+                                @if (count($$t) <= 2)
+                                    <ul class="col" style="">
+                                        @foreach ($$t as $skill)
                                             <li>
-                                                {{ $skills[$x]->languageName }}
-                                                @if ($skills[$x]->main != 'null')
-                                                    - {{ $skills[$x]->main }}
+                                                {{ $skill->languageName }}
+                                                @if ($skill->main != 'null')
+                                                    - {{ $skill->main }}
                                                 @endif
                                             </li>
-                                        @endif
-                                    @endfor
-                                </ul>
+                                        @endforeach
+                                    </ul>
+                                @else
+                                    <ul class="col" style="width: 50%;float: left !important">
+                                        @foreach ($$t as $skill)
+                                            @if ($count >= 2)
+                                                </ul>
+                                                <ul class="col" style="width: 50%;float: right !important">
+                                            @endif
+                                            <li>
+                                                {{ $skill->languageName }}
+                                                @if ($skill->main != 'null')
+                                                    - {{ $skill->main }}
+                                                @endif
+                                            </li>
+                                            @php
+                                                $count++
+                                            @endphp
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </div>
                         @endfor
                     </div>
-
                 </div>
 
                 <div class="col-12 section-content latest-project">

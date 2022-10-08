@@ -28,17 +28,29 @@ class UserHomeController extends BaseController
      */
     public function index()
     {
+        $types = ['Backend', 'Fontend', 'Database', 'Prior Knowledge', 'Little Knowledge',  'Other Skills'];
+
+        foreach ($types as $type ) {
+            $t = str_replace(" ", "_", $type);
+            $$t = Skill::where('type', "=", $type)->get();
+        }
+
+
         $projects = Projects::orderBy('endDate', 'DESC')->get();
-        $skills = Skill::all();
         $sLanguages = SpeakingLanguage::all();
         $user = User::first();
         $works = WorkExp::orderBy('startDate', 'DESC')->get();
         return view('index',[
             'projects' => $projects,
-            'skills' => $skills,
             'sLanguages' => $sLanguages,
             'works' => $works,
             'user' => $user,
+            'Backend' => $Backend,
+            'Fontend' => $Fontend,
+            'Database' => $Database,
+            'Prior_Knowledge' => $Prior_Knowledge,
+            'Little_Knowledge' => $Little_Knowledge,
+            'Other_Skills' => $Other_Skills,
         ]);
     }
 
