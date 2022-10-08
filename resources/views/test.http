@@ -11,7 +11,7 @@ Content-Type: application/json
 
 {
     "fullName": "Mohab Mamdouh U",
-    "username": "mohablog U",
+    "username": "mohablog U"
 }
 
 
@@ -27,7 +27,7 @@ PUT http://127.0.0.1:8000/api/speaking-languages/update/1
 Content-Type: application/json
 
 {
-    "languageName": "ar",
+    "languagename": "ar",
     "level": "Level 0"
 }
 
@@ -39,6 +39,6 @@ POST http://127.0.0.1:8000/api/speaking-languages/create HTTP/1.1
 Content-Type: application/json
 
 {
-    "languageName": "ar",
+    "languagename": "ar",
     "level": "Level 0"
 }

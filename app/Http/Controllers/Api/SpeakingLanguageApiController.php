@@ -19,12 +19,12 @@ class SpeakingLanguageApiController extends BaseController
     public function create()
     {
         request()->validate([
-            'languageName' => 'required',
+            'languagename' => 'required',
             'level' => 'required',
         ]);
 
         $success = SpeakingLanguage::create([
-            'languageName' => request('languageName'),
+            'languageName' => request('languagename'),
             'level' => request('level')
         ]);
 
@@ -36,12 +36,12 @@ class SpeakingLanguageApiController extends BaseController
     public function update(SpeakingLanguage $lang)
     {
         request()->validate([
-            'languageName' => 'required',
+            'languagename' => 'required',
             'level' => 'required',
         ]);
 
         $success = $lang->update([
-            'languageName' => request('languageName'),
+            'languageName' => request('languagename'),
             'level' => request('level')
         ]);
 
