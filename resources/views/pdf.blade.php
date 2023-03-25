@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ strtok($user->fullName, " ") }} - Portfolio</title>
+    <title>{{ strtok($user->fullName, ' ') }} - Portfolio</title>
 
     <style>
         @page {
@@ -69,7 +70,7 @@
             margin-bottom: 7px;
         }
 
-        .email ,
+        .email,
         .phone {
             color: #999;
             font-weight: 300;
@@ -93,6 +94,7 @@
         .details {
             line-height: 15px;
         }
+
         .section {
             margin-bottom: 15px;
             margin-top: 20px;
@@ -118,7 +120,7 @@
             margin-bottom: 0;
         }
 
-        .left ,
+        .left,
         .right {
             vertical-align: top;
             display: inline-block;
@@ -152,7 +154,7 @@
             margin-bottom: 10px;
         }
 
-        .skills__item .right input{
+        .skills__item .right input {
             display: none;
         }
 
@@ -165,7 +167,7 @@
             margin-right: 3px;
         }
 
-        input:checked + label {
+        input:checked+label {
             background: #bd545a;
         }
 
@@ -205,19 +207,20 @@
             display: none;
         }
 
-        .clear{
+        .clear {
             clear: both;
         }
     </style>
 </head>
+
 <body>
     <section>
         <div class="container">
             <div class="header unbreakable">
                 <div class="full-name">
-                    <span class="first-name">{{ strtok($user->fullName, " ") }}</span>
+                    <span class="first-name">{{ strtok($user->fullName, ' ') }}</span>
                     @php
-                        $strArray = explode(' ',$user->fullName);
+                        $strArray = explode(' ', $user->fullName);
                         $lastName = $strArray[1];
                     @endphp
                     <span class="last-name">{{ $lastName }}</span>
@@ -250,11 +253,13 @@
                     <span class="position">{{ $user->title }}</span>
                     <span class="desc">
                         @php
-                            $profile = explode(".", $user->profile)
+                            $profile = explode('.', $user->profile);
                         @endphp
                         <ul>
                             @for ($i = 0; $i < count($profile) - 1; $i++)
-                                <b><li> {{ $profile[$i] }} </li></b>
+                                <b>
+                                    <li> {{ $profile[$i] }} </li>
+                                </b>
                             @endfor
                         </ul>
                     </span>
@@ -269,7 +274,9 @@
                             <div class="section__list-item">
                                 <div class="left">
                                     <div class="name">{{ $w->companyName }}</div>
-                                    <div class="duration">{{ date("F Y", strtotime($w->startDate)) }} - {{ $w->endDate == null ? $w->current : date("F Y", strtotime($w->endDate)) }}</div>
+                                    <div class="duration">{{ date('F Y', strtotime($w->startDate)) }} -
+                                        {{ $w->endDate == null ? $w->current : date('F Y', strtotime($w->endDate)) }}
+                                    </div>
                                 </div>
                                 <div class="right">
                                     <div class="name">{{ $w->title }}</div>
@@ -281,32 +288,34 @@
                 </div>
 
                 <div class="section unbreakable" id="skill">
-                    <div class="section__title">{{ __ ('Skills') }}</div>
+                    <div class="section__title">{{ __('Skills') }}</div>
                     <div class="skills">
                         @php
-                            $types = ['Backend', 'Fontend', 'Database', 'Prior Knowledge', 'Little Knowledge',  'Other Skills']
+                            $types = ['Backend', 'Fontend', 'Database', 'Prior Knowledge', 'Little Knowledge', 'Other Skills'];
                         @endphp
 
                         <div class="row">
                             @for ($i = 0; $i < count($types); $i++)
                                 @if (($i + 1) % 2 != 0)
-                                    </div><div class="clear"></div><div class="row">
-                                @endif
-                                <div class="col">
-                                    <h5 class="text-capitalize"><strong>{{ $types[$i] }}</strong></h5>
-                                    <ul>
-                                        @for ($x = 0; $x < count($skills); $x++)
-                                            @if ($skills[$x]->type == $types[$i])
-                                                <li>
-                                                    {{ $skills[$x]->languageName }}
-                                                    @if ($skills[$x]->main != 'null')
-                                                        - {{ $skills[$x]->main }}
-                                                    @endif
-                                                </li>
-                                            @endif
-                                        @endfor
-                                    </ul>
-                                </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="row">
+                            @endif
+                            <div class="col">
+                                <h5 class="text-capitalize"><strong>{{ $types[$i] }}</strong></h5>
+                                <ul>
+                                    @for ($x = 0; $x < count($skills); $x++)
+                                        @if ($skills[$x]->type == $types[$i])
+                                            <li>
+                                                {{ $skills[$x]->languageName }}
+                                                @if ($skills[$x]->main != 'null')
+                                                    - {{ $skills[$x]->main }}
+                                                @endif
+                                            </li>
+                                        @endif
+                                    @endfor
+                                </ul>
+                            </div>
                             @endfor
                         </div>
                     </div>
@@ -325,8 +334,11 @@
                         @foreach ($projects as $p)
                             <div class="section__list-item">
                                 <div class="name">{{ $p->name }}</div>
-                                <div class="text"><a href="{{ $p->appURL ? $p->appURL : $p->url }}">{{ $p->appURL ? $p->appURL : $p->url }}</a></div>
+                                <div class="text"><a
+                                        href="{{ $p->appURL ? $p->appURL : $p->url }}">{{ $p->appURL ? $p->appURL : $p->url }}</a>
+                                </div>
                                 <div class="text">{{ $p->caption }}</div>
+                                <div class="text">{{ __('Technologies') . ': ' . $p->techmologyStack }}</div>
                             </div>
                         @endforeach
                     </div>
@@ -346,32 +358,32 @@
                                 @php
                                     $level = 0;
                                 @endphp
-                                @if ($sLanguages[$i]->level == "Level 0")
+                                @if ($sLanguages[$i]->level == 'Level 0')
                                     {{ __('No Knowallage') }}
                                     @php
                                         $level = 0;
                                     @endphp
-                                @elseif ($sLanguages[$i]->level == "Level 1")
+                                @elseif ($sLanguages[$i]->level == 'Level 1')
                                     {{ __('Elementary') }}
                                     @php
                                         $level = 1;
                                     @endphp
-                                @elseif ($sLanguages[$i]->level == "Level 2")
+                                @elseif ($sLanguages[$i]->level == 'Level 2')
                                     {{ __('Low intermediate') }}
                                     @php
                                         $level = 2;
                                     @endphp
-                                @elseif ($sLanguages[$i]->level == "Level 3")
+                                @elseif ($sLanguages[$i]->level == 'Level 3')
                                     {{ __('	High intermediate') }}
                                     @php
                                         $level = 3;
                                     @endphp
-                                @elseif ($sLanguages[$i]->level == "Level 4")
+                                @elseif ($sLanguages[$i]->level == 'Level 4')
                                     {{ __('Advanced') }}
                                     @php
                                         $level = 4;
                                     @endphp
-                                @elseif ($sLanguages[$i]->level == "Level 5")
+                                @elseif ($sLanguages[$i]->level == 'Level 5')
                                     {{ __('Native') }}
                                     @php
                                         $level = 5;
@@ -390,4 +402,5 @@
     </section>
 
 </body>
+
 </html>
